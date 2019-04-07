@@ -3,6 +3,7 @@
     <h1>Home page</h1>
     <v-layout>
       <pre>
+              - optimization!
                 - odds
                 - TvT stats
 
