@@ -1,14 +1,20 @@
-import Vue from "vue";
-import './plugins/vuetify'
-import App from "./App.vue";
-import router from "./router";
-import store from "./store";
-import "./registerServiceWorker";
+import Vue from 'vue';
+import { sync } from 'vuex-router-sync';
 
-Vue.config.productionTip = false;
+import store from './store';
+import App from './App.vue';
+import router from './router';
+
+import './plugins/vuetify';
+
+import './assets/styles/index.styl';
+
+sync(store, router);
 
 new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount("#app");
+	store,
+	router,
+	...App,
+}).$mount('#app');
+
+Vue.config.productionTip = false;

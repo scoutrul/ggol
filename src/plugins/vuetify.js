@@ -1,7 +1,14 @@
-import Vue from 'vue'
-import Vuetify from 'vuetify/lib'
-import 'vuetify/src/stylus/app.styl'
+import Vue from 'vue';
+import Vuetify, { VApp, VFadeTransition, VBtn, VImg } from 'vuetify/lib';
 
 Vue.use(Vuetify, {
-  iconfont: 'md',
-})
+	components: {
+		VApp,
+		VFadeTransition,
+		VBtn,
+		VImg,
+	},
+	directives: {
+		Ripple: import(/* webpackChunkName: "Ripple" */ 'vuetify/lib/directives/ripple'),
+	},
+});
