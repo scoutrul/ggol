@@ -1,10 +1,10 @@
 <template>
-    <v-layout class="container"><slot /></v-layout>
+  <v-layout class="container"><slot /></v-layout>
 </template>
 
 <script>
 export default {
-    data: () => ({}),
+  data: () => ({})
 };
 </script>
 

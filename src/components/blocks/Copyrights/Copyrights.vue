@@ -1,5 +1,5 @@
 <template>
-    <v-flex class="copyrights">Vuestarter 2019. Not reserved.</v-flex>
+  <v-flex class="copyrights">Vuestarter 2019. Not reserved.</v-flex>
 </template>
 
 <script>

@@ -1,9 +1,9 @@
 <template>
-    <p>Error loading component</p>
+  <p>Error loading component</p>
 </template>
 
 <script>
 export default {
-    props: {},
+  props: {}
 };
 </script>

@@ -1,23 +1,23 @@
 <template>
-    <div class="container">
-        <h1>Home page</h1>
-        <v-layout>
-            <pre>
+  <div class="container">
+    <h1>Home page</h1>
+    <v-layout>
+      <pre>
                 - odds
                 - TvT stats
 
-            </pre>
-        </v-layout>
-    </div>
+            </pre
+      >
+    </v-layout>
+  </div>
 </template>
 
 <script>
-
 export default {
-    data: () => ({
-        leagues: {},
-    }),
-    mounted() {},
+  data: () => ({
+    leagues: {}
+  }),
+  mounted() {}
 };
 </script>
 <style></style>

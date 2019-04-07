@@ -1,7 +1,7 @@
 <template>
-    <v-btn depressed flat round dark ripple class="button__yellow">
-        <slot />
-    </v-btn>
+  <v-btn depressed flat round dark ripple class="button__yellow">
+    <slot />
+  </v-btn>
 </template>
 
 <script>

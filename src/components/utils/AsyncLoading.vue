@@ -1,9 +1,9 @@
 <template>
-    <p>isLoading</p>
+  <p>isLoading</p>
 </template>
 
 <script>
 export default {
-    props: {},
+  props: {}
 };
 </script>
