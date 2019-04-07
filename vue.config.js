@@ -2,7 +2,7 @@ module.exports = {
   assetsDir: "assets",
   runtimeCompiler: true,
   productionSourceMap: false,
-  publicPath: '/',
+  publicPath: '/ggol',
   css: {
     extract: false
   },
