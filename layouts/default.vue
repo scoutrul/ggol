@@ -10,7 +10,7 @@
     <Main>
       <Body>
         <v-fade-transition mode="out-in">
-          <router-view />
+          <nuxt />
         </v-fade-transition>
       </Body>
     </Main>
@@ -42,5 +42,5 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '~@/assets/styles/index.styl';
+@require '~@/assets/styles/index.styl';
 </style>

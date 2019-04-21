@@ -1,0 +1,9 @@
+apps:
+- name: ggol.ru
+  script: /home/admin/web/ggol.ru/public_html/node_modules/nuxt-start/bin/nuxt-start.js
+  cwd: /home/admin/web/ggol.ru/public_html/.nuxt
+  max_memory_restart: "250M"
+  args: "start"
+  env_production:
+    PORT: 3000
+    NODE_ENV: production
