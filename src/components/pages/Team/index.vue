@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import api from "@/services/";
-import { TeamLogo } from "@/components/blocks";
+import api from '@/services/'
+import { TeamLogo } from '@/components/blocks'
 
 export default {
   components: {
@@ -21,12 +21,12 @@ export default {
     team: {}
   }),
   created() {
-    const teamId = this.$store.state.route.params.id;
+    const teamId = this.$store.state.route.params.id
     api.getTeam(teamId).then(() => {
-      this.team = this.$store.state.teams[teamId];
-    });
+      this.team = this.$store.state.teams[teamId]
+    })
   },
   mounted() {}
-};
+}
 </script>
 <style></style>

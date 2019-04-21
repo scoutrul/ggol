@@ -1,8 +1,8 @@
 <template>
-  <v-layout column class="tvt--event flex" xs12 sm4 md3 lg3 xl2 v-if="fixture">
+  <v-layout v-if="fixture" column class="tvt--event flex" xs12 sm4 md3 lg3 xl2>
     <v-layout justify-center align-center>
       <v-flex class="tvt--nogrow">
-        <CountryFlag :league_id="fixture.league_id" v-if="live" />
+        <CountryFlag v-if="live" :league_id="fixture.league_id" />
       </v-flex>
       <v-flex class="tvt--center tvt--title tvt--round tvt--nogrow">{{
         fixture.round
@@ -19,7 +19,7 @@
         </router-link>
         <div v-else>{{ fixture.homeTeam }}</div>
       </v-flex>
-      <v-flex class="tvt--center tvt--elapsed" xs4 v-if="live"
+      <v-flex v-if="live" class="tvt--center tvt--elapsed" xs4
         >({{ fixture.elapsed }} мин.)</v-flex
       >
       <v-spacer v-else></v-spacer>
@@ -32,7 +32,7 @@
         <div v-else>{{ fixture.awayTeam }}</div>
       </v-flex>
     </v-layout>
-    <v-layout class="tvt--header" v-if="isInLiveTable()">
+    <v-layout v-if="isInLiveTable()" class="tvt--header">
       <v-flex class="tvt--center tvt--logo" xs4>
         <router-link
           v-if="hrefTeams"
@@ -66,25 +66,25 @@
 </template>
 
 <script>
-import TeamLogo from "./Logo";
-import CountryFlag from "./CountryFlag";
+import TeamLogo from './Logo'
+import CountryFlag from './CountryFlag'
 
 export default {
   components: {
     TeamLogo,
     CountryFlag
   },
-  props: ["fixture", "hrefStatistic", "live", "hrefTeams"],
+  props: ['fixture', 'hrefStatistic', 'live', 'hrefTeams'],
   data: () => ({
     resolve: false
   }),
   created() {},
   methods: {
     isInLiveTable() {
-      return this.live || this.fixture.final_score || this.fixture.elapsed > 0;
+      return this.live || this.fixture.final_score || this.fixture.elapsed > 0
     }
   }
-};
+}
 </script>
 <style lang="scss">
 .tvt--event {

@@ -17,11 +17,11 @@
 </template>
 
 <script>
-import { Main, Header, Body, Container } from "./components/layout";
-import { LogoHeader, Menu } from "./components/blocks";
+import { Main, Header, Body, Container } from './components/layout'
+import { LogoHeader, Menu } from './components/blocks'
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     Main,
     Container,
@@ -42,7 +42,7 @@ export default {
         small: `64px`,
         big: `128px`
       }
-    };
+    }
   },
   computed: {
     getHeaderHeight() {
@@ -50,37 +50,37 @@ export default {
         height: this.isHeaderScrolled()
           ? this.headerSize.small
           : this.headerSize.big
-      };
+      }
     },
     footerAllowPages() {
-      const pagesWithFooter = ["home", "profile"];
-      return pagesWithFooter.includes(this.$route.name);
+      const pagesWithFooter = ['home', 'profile']
+      return pagesWithFooter.includes(this.$route.name)
     }
   },
   mounted() {
-    this.headerHeight = this.$refs.header.$el.clientHeight;
-    this.appHeight = this.$el.clientHeight;
-    this.innerHeight = window.innerHeight;
-    this.registerHandlers();
+    this.headerHeight = this.$refs.header.$el.clientHeight
+    this.appHeight = this.$el.clientHeight
+    this.innerHeight = window.innerHeight
+    this.registerHandlers()
   },
 
   methods: {
     isHeaderScrolled() {
-      return this.pageYOffset >= this.headerHeight;
+      return this.pageYOffset >= this.headerHeight
     },
     registerHandlers() {
-      window.addEventListener("scroll", this.handlerScrollWindow);
+      window.addEventListener('scroll', this.handlerScrollWindow)
     },
     unregisterHandlers() {
-      window.removeEventListener("scroll", this.handlerScrollWindow);
+      window.removeEventListener('scroll', this.handlerScrollWindow)
     },
     handlerScrollWindow() {
-      this.pageYOffset = window.pageYOffset;
-      this.innerHeight = window.innerHeight;
-      this.appHeight = this.$el.clientHeight;
+      this.pageYOffset = window.pageYOffset
+      this.innerHeight = window.innerHeight
+      this.appHeight = this.$el.clientHeight
     }
   }
-};
+}
 </script>
 
 <style lang="stylus">

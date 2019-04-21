@@ -1,5 +1,5 @@
-import Vue from "vue";
-import Vuetify, { VApp, VFadeTransition, VBtn, VImg } from "vuetify/lib";
+import Vue from 'vue'
+import Vuetify, { VApp, VFadeTransition, VBtn, VImg } from 'vuetify/lib'
 
 Vue.use(Vuetify, {
   components: {
@@ -9,6 +9,8 @@ Vue.use(Vuetify, {
     VImg
   },
   directives: {
-    Ripple: import(/* webpackChunkName: "Ripple" */ "vuetify/lib/directives/ripple")
+    Ripple: import(
+      /* webpackChunkName: "Ripple" */ 'vuetify/lib/directives/ripple'
+    )
   }
-});
+})

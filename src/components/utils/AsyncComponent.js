@@ -1,5 +1,5 @@
-import AsyncLoadError from "./AsyncLoadError";
-import AsyncLoading from "./AsyncLoading";
+import AsyncLoadError from './AsyncLoadError'
+import AsyncLoading from './AsyncLoading'
 
 const AsyncComponent = imp => ({
   component: imp,
@@ -7,6 +7,6 @@ const AsyncComponent = imp => ({
   delay: 300,
   error: AsyncLoadError,
   timeout: 10000
-});
+})
 
-export default AsyncComponent;
+export default AsyncComponent

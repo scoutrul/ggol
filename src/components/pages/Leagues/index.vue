@@ -19,9 +19,9 @@
 </template>
 
 <script>
-import api from "@/services/";
+import api from '@/services/'
 
-import { CountryFlag } from "@/components/blocks";
+import { CountryFlag } from '@/components/blocks'
 
 export default {
   components: {
@@ -32,9 +32,9 @@ export default {
   }),
   mounted() {
     api.getLeagues().then(() => {
-      this.leagues = this.$store.state.leagues;
-    });
+      this.leagues = this.$store.state.leagues
+    })
   }
-};
+}
 </script>
 <style></style>

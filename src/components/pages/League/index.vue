@@ -12,9 +12,9 @@
     <v-layout v-for="(team, i) in table" :key="team.team_id + i">
       <v-flex xs1>
         <TeamLogo
-          :teamId="team.team_id"
+          :team-id="team.team_id"
           :size="28"
-          :className="'league__team--logo'"
+          :class-name="'league__team--logo'"
         />
       </v-flex>
       <v-flex xs2>
@@ -35,8 +35,8 @@
 </template>
 
 <script>
-import api from "@/services/";
-import { TeamLogo, LeagueInfo } from "@/components/blocks";
+import api from '@/services/'
+import { TeamLogo, LeagueInfo } from '@/components/blocks'
 
 export default {
   components: {
@@ -50,19 +50,19 @@ export default {
     resolved: false
   }),
   created() {
-    const leagueId = this.$store.state.route.params.id;
-    this.leagueId = leagueId;
+    const leagueId = this.$store.state.route.params.id
+    this.leagueId = leagueId
     api.getLeague(leagueId).then(() => {
-      this.league = this.$store.state.leagues[this.leagueId];
-    });
+      this.league = this.$store.state.leagues[this.leagueId]
+    })
     api.getLeagueTable(leagueId).then(() => {
-      this.table = this.$store.state.leagueTables[this.leagueId];
+      this.table = this.$store.state.leagueTables[this.leagueId]
       this.resolved =
         this.$store.state.leagueTables[leagueId] &&
-        this.$store.state.leagues[leagueId];
-    });
+        this.$store.state.leagues[leagueId]
+    })
   }
-};
+}
 </script>
 <style>
 .league__team--logo {

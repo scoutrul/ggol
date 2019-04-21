@@ -19,6 +19,6 @@ export default {
     leagues: {}
   }),
   mounted() {}
-};
+}
 </script>
 <style></style>

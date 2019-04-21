@@ -1,5 +1,5 @@
 module.exports = {
-  assetsDir: "assets",
+  assetsDir: 'assets',
   runtimeCompiler: true,
   productionSourceMap: false,
   publicPath: '/ggol',
@@ -8,7 +8,7 @@ module.exports = {
   },
 
   pwa: {
-    name: "GGol"
+    name: 'GGol'
   },
 
   pluginOptions: {
@@ -16,4 +16,4 @@ module.exports = {
       openAnalyzer: false
     }
   }
-};
+}

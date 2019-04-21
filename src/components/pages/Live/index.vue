@@ -8,7 +8,7 @@
         :fixture="fixture"
         :href-statistic="true"
         :live="true"
-        :hrefTeams="false"
+        :href-teams="false"
       />
     </v-layout>
     <h1>Today next</h1>
@@ -19,7 +19,7 @@
         :fixture="fixture"
         :href-statistic="true"
         :live="false"
-        :hrefTeams="false"
+        :href-teams="false"
       />
     </v-layout>
     <v-layout fill-height></v-layout>
@@ -27,10 +27,10 @@
 </template>
 
 <script>
-import api from "@/services/";
-import { TeamLogo, TeamVsTeam } from "@/components/blocks";
-import sortBy from "lodash/sortBy";
-import filter from "lodash/filter";
+import api from '@/services/'
+import { TeamLogo, TeamVsTeam } from '@/components/blocks'
+import sortBy from 'lodash/sortBy'
+import filter from 'lodash/filter'
 
 export default {
   components: {
@@ -43,41 +43,41 @@ export default {
   }),
   computed: {
     orderedLiveFixtures() {
-      return sortBy({ ...this.liveFixtures }, "elapsed");
+      return sortBy({ ...this.liveFixtures }, 'elapsed')
     },
     notStartedFixtures() {
-      const sorted = sortBy({ ...this.todayFixtures }, "event_date");
-      return filter(sorted, fixture => !(fixture.elapsed > 0));
+      const sorted = sortBy({ ...this.todayFixtures }, 'event_date')
+      return filter(sorted, fixture => !(fixture.elapsed > 0))
     }
   },
   beforeRouteLeave(to, from, next) {
     this.$store.state.fixtures = {
       ...this.$store.state.fixtures,
       ...this.fixtures
-    };
-    next();
+    }
+    next()
   },
   beforeRouteEnter(to, from, next) {
     next(async vm => {
-      await api.getLeagues();
+      await api.getLeagues()
       await api.getLiveFixtures().then(res => {
-        vm.liveFixtures = vm.$store.state.liveFixtures;
-      });
-    });
+        vm.liveFixtures = vm.$store.state.liveFixtures
+      })
+    })
   },
   mounted() {
     api.getTodayFixtures().then(res => {
-      this.todayFixtures = this.$store.state.todayFixtures;
-    });
+      this.todayFixtures = this.$store.state.todayFixtures
+    })
   },
   methods: {
     isItLive(elapsed) {
       if (elapsed >= 1) {
-        return true;
+        return true
       }
-      return false;
+      return false
     }
   }
-};
+}
 </script>
 <style></style>

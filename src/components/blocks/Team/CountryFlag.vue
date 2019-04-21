@@ -3,34 +3,34 @@
 </template>
 
 <script>
-import api from "@/services/";
+import api from '@/services/'
 
 export default {
-  name: "Flag",
-  props: ["league_id"],
+  name: 'Flag',
+  props: ['leagueId'],
   data: () => ({
     resolved: false,
     countryFlagSrc: null,
-    countryName: ""
+    countryName: ''
   }),
 
   mounted() {
-    this.league_id && this.getCountryFlag(this.league_id);
+    this.league_id && this.getCountryFlag(this.league_id)
   },
   methods: {
     getCountryFlag(league_id) {
       api
         .getLeague(league_id)
         .then(() => {
-          this.countryFlagSrc = this.$store.state.leagues[this.league_id].flag;
-          this.countryName = this.$store.state.leagues[this.league_id].country;
-          this.resolved = true;
+          this.countryFlagSrc = this.$store.state.leagues[this.league_id].flag
+          this.countryName = this.$store.state.leagues[this.league_id].country
+          this.resolved = true
         })
         .catch(reason => {
-          console.log(reason);
-        });
+          console.log(reason)
+        })
     }
   }
-};
+}
 </script>
 <style></style>

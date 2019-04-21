@@ -1,20 +1,20 @@
-import Vue from "vue";
-import { sync } from "vuex-router-sync";
+import Vue from 'vue'
+import { sync } from 'vuex-router-sync'
 
-import store from "./store";
-import App from "./App.vue";
-import router from "./router";
+import store from './store'
+import App from './App.vue'
+import router from './router'
 
-import "./plugins/vuetify";
+import './plugins/vuetify'
 
-import "./assets/styles/index.styl";
+import './assets/styles/index.styl'
 
-sync(store, router);
+sync(store, router)
 
 new Vue({
   store,
   router,
   ...App
-}).$mount("#app");
+}).$mount('#app')
 
-Vue.config.productionTip = false;
+Vue.config.productionTip = false
