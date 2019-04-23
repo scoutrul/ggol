@@ -20,18 +20,23 @@
 
 <script>
 import { CountryFlag } from '@/components/blocks'
+import api from '@/plugins/api'
 export default {
+  head: {
+    title: 'GGOL.RU'
+  },
   components: {
     CountryFlag
   },
   data: () => ({
     leagues: {}
   }),
-  created() {
-    // $api.getLeagues().then(() => {
-    //   this.leagues = this.$store.state.leagues
-    // })
-
+  asyncData ({ store, params, app }) {
+     return api.getLeagues(store).then(() => {
+       return {
+         leagues: store.state.leagues
+       }
+     })
   }
 }
 </script>

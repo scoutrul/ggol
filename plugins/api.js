@@ -108,10 +108,10 @@ const api = {
       store.commit('STORE_STATISTICS', { fixtureId, statistics })
     })
   },
-  getLeagues(path = 'leagues') {
-    if (store.state.leaguesCount) {
-      return new Promise(resolve => resolve())
-    }
+  getLeagues(store, path = 'leagues') {
+    // if (store.state.leaguesCount) {
+    //   return new Promise(resolve => resolve())
+    // }
     return axios.get(`${url}/${path}`).then(res => {
       debugger
       const leagues = res.data.api.leagues
@@ -165,5 +165,7 @@ const api = {
       })
   }
 }
+
+export default api;
 
 Vue.use('api', api)

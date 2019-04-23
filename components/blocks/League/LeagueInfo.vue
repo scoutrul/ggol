@@ -38,7 +38,7 @@ export default {
   }
 }
 </script>
-<style>
+<style lang='stylus'>
 .league {
   margin-bottom: 10px;
 }

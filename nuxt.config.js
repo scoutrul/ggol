@@ -4,6 +4,7 @@ const pkg = require('./package')
 // eslint-disable-next-line nuxt/no-cjs-in-config
 module.exports = {
   mode: 'universal',
+  dev: (process.env.NODE_ENV !== 'production'),
   head: {
     title: pkg.name,
     meta: [
@@ -14,8 +15,7 @@ module.exports = {
   },
   loading: { color: '#f5f' },
   css: [
-    '~assets/styles/base/fonts',
-    '~assets/styles/base/normalize',
+
   ],
 
   plugins: ['@/plugins/vuetify', '@/plugins/core-components', '@/plugins/api.js'],
@@ -27,7 +27,11 @@ module.exports = {
     '@nuxtjs/webpackmonitor'
   ],
   styleResources: {
-    stylus: ['~node_modules/vuetify/src/stylus/settings/_variables', '~node_modules/vuetify/src/stylus/generic/_transitions']
+    stylus: [
+      '~node_modules/vuetify/src/stylus/settings/_variables',
+      '~node_modules/vuetify/src/stylus/generic/_transitions',
+      '~assets/styles/base/fonts',
+      '~assets/styles/base/normalize',]
   },
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
@@ -62,8 +66,13 @@ module.exports = {
           exclude: /(node_modules)/
         })
         config.module.rules.push({
-          test: /\.css|styl$/,
-          loader: ['vue-style-loader', 'css-loader', 'stylus-loader'],
+          test: /\.styl$/,
+          loader: ['css-loader', 'stylus-loader'],
+          exclude: /(node_modules)/
+        })
+        config.module.rules.push({
+          test: /\.css$/,
+          loader: ['vue-style-loader','style-loader', 'css-loader'],
           exclude: /(node_modules)/
         })
         config.module.rules.push({
@@ -78,4 +87,10 @@ module.exports = {
     name: 'fade',
     mode: 'out-in',
   },
+  vue: {
+    config: {
+      productionTip: false,
+      devtools: true
+    }
+  }
 }
