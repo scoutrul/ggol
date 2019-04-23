@@ -109,13 +109,13 @@ const api = {
     })
   },
   getLeagues(store, path = 'leagues') {
-    // if (store.state.leaguesCount) {
-    //   return new Promise(resolve => resolve())
-    // }
+    if (store.state.leaguesCount) {
+      return new Promise(resolve => resolve())
+    }
     return axios.get(`${url}/${path}`).then(res => {
-      debugger
       const leagues = res.data.api.leagues
       const results = res.data.api.results
+
       store.commit('STORE_LEAGUES', { leagues, results })
     })
   },

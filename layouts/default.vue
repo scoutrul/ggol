@@ -33,7 +33,7 @@ export default {
 }
 </script>
 
-<style lang="styl" scoped>
+<style lang="stylus" scoped>
 @import '../assets/styles/base/main.styl';
 @import '../assets/styles/base/header.styl';
 @import '../assets/styles/base/footer.styl';

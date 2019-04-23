@@ -3,8 +3,10 @@ const pkg = require('./package')
 
 // eslint-disable-next-line nuxt/no-cjs-in-config
 module.exports = {
-  mode: 'universal',
-  dev: (process.env.NODE_ENV !== 'production'),
+  // mode: 'universal',
+  mode: 'spa',
+  dev: true,
+  devtools: true,
   head: {
     title: pkg.name,
     meta: [
@@ -72,7 +74,7 @@ module.exports = {
         })
         config.module.rules.push({
           test: /\.css$/,
-          loader: ['vue-style-loader','style-loader', 'css-loader'],
+          loader: ['vue-style-loader', 'css-loader', 'style-loader'],
           exclude: /(node_modules)/
         })
         config.module.rules.push({
