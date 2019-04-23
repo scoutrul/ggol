@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuetify, { VApp, VFadeTransition, VBtn, VImg } from 'vuetify/lib'
 
 Vue.use(Vuetify, {
+  theme: false,
   components: {
     VApp,
     VFadeTransition,

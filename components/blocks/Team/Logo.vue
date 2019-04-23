@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import api from '@/services/'
+// import api from '@/services/'
 
 export default {
   props: ['teamId', 'size', 'className'],
@@ -29,15 +29,15 @@ export default {
   },
   methods: {
     getCurrentLogo(teamId) {
-      api
-        .getTeam(teamId)
-        .then(() => {
-          this.team = this.$store.state.teams[teamId]
-          this.resolved = true
-        })
-        .catch(reason => {
-          console.log(reason)
-        })
+      // api
+      //   .getTeam(teamId)
+      //   .then(() => {
+      //     this.team = this.$store.state.teams[teamId]
+      //     this.resolved = true
+      //   })
+      //   .catch(reason => {
+      //     console.log(reason)
+      //   })
     }
   }
 }

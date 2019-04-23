@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import get from 'lodash/get'
 import axios from 'axios'
 import each from 'lodash/each'
@@ -8,7 +9,7 @@ const token = 'fe81e0a8ecmsh0ef111a4d181d40p176c6ejsn1f163ba39e44'
 
 axios.defaults.headers.common['X-RapidAPI-Key'] = token
 
-export default {
+const api = {
   getApi(path) {
     return axios.get(`${url}/${path}`).then(res => res)
   },
@@ -164,3 +165,5 @@ export default {
       })
   }
 }
+
+Vue.use('api', api)

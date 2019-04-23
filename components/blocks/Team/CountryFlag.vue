@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import api from '@/services/'
+// import api from '@/services/'
 
 export default {
   name: 'Flag',
@@ -19,16 +19,16 @@ export default {
   },
   methods: {
     getCountryFlag() {
-      api
-        .getLeague()
-        .then(() => {
-          this.countryFlagSrc = this.$store.state.leagues[this.leagueId].flag
-          this.countryName = this.$store.state.leagues[this.leagueId].country
-          this.resolved = true
-        })
-        .catch(reason => {
-          console.log(reason)
-        })
+      // api
+      //   .getLeague()
+      //   .then(() => {
+      //     this.countryFlagSrc = this.$store.state.leagues[this.leagueId].flag
+      //     this.countryName = this.$store.state.leagues[this.leagueId].country
+      //     this.resolved = true
+      //   })
+      //   .catch(reason => {
+      //     console.log(reason)
+      //   })
     }
   }
 }

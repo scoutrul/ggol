@@ -1,24 +1,16 @@
-<template>
-  <v-app dark>
-    <v-toolbar :clipped-left="true" fixed app>
-      <v-toolbar-title v-text="title" />
-        <LogoHeader />
-        <Menu />
-      <v-spacer />
-    </v-toolbar>
-
-    <Main>
-      <Body>
-        <v-fade-transition mode="out-in">
-          <nuxt />
-        </v-fade-transition>
-      </Body>
-    </Main>
-
-    <v-footer :fixed="fixed" app>
-      <span>&copy; GGol.ru 2019</span>
-    </v-footer>
-  </v-app>
+<template lang="pug">
+  v-app(dark)
+    v-toolbar(:clipped-left="true" fixed app)
+      v-toolbar-title(v-text="title")
+        LogoHeader
+        Menu
+      v-spacer
+    Main
+      Body
+        v-fade-transition(mode="out-in")
+          nuxt
+    v-footer(:fixed="fixed" app)
+      span &copy; GGol.ru 2019
 </template>
 
 <script>
@@ -41,6 +33,8 @@ export default {
 }
 </script>
 
-<style lang="stylus">
-@require '~@/assets/styles/index.styl';
+<style lang="styl" scoped>
+@import '../assets/styles/base/main.styl';
+@import '../assets/styles/base/header.styl';
+@import '../assets/styles/base/footer.styl';
 </style>

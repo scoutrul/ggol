@@ -1,12 +1,9 @@
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 const pkg = require('./package')
 
+// eslint-disable-next-line nuxt/no-cjs-in-config
 module.exports = {
   mode: 'universal',
-
-  /*
-   ** Headers of the page
-   */
   head: {
     title: pkg.name,
     meta: [
@@ -14,54 +11,43 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
-      }
-    ]
   },
-
-  /*
-   ** Customize the progress-bar color
-   */
-  loading: { color: '#fff' },
-
-  /*
-   ** Global CSS
-   */
-  css: ['~/assets/styles/index.styl'],
-
-  /*
-   ** Plugins to load before mounting the App
-   */
-  plugins: ['@/plugins/vuetify'],
-
-  /*
-   ** Nuxt.js modules
-   */
-  modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+  loading: { color: '#f5f' },
+  css: [
+    '~assets/styles/base/fonts',
+    '~assets/styles/base/normalize',
   ],
-  /*
-   ** Axios module configuration
-   */
+
+  plugins: ['@/plugins/vuetify', '@/plugins/core-components', '@/plugins/api.js'],
+
+  modules: [
+    '@nuxtjs/style-resources',
+    '@nuxtjs/axios',
+    '@nuxtjs/pwa',
+    '@nuxtjs/webpackmonitor'
+  ],
+  styleResources: {
+    stylus: ['~node_modules/vuetify/src/stylus/settings/_variables', '~node_modules/vuetify/src/stylus/generic/_transitions']
+  },
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
 
-  /*
-   ** Build configuration
-   */
   build: {
+    analyze: true,
     transpile: ['vuetify/lib'],
     plugins: [new VuetifyLoaderPlugin()],
     loaders: {
       stylus: {}
+    },
+    postcss: {
+      plugins: {
+        'postcss-preset-env': {
+          features: {
+            customProperties: false
+          }
+        }
+      }
     },
     /*
      ** You can extend webpack config here
@@ -75,7 +61,21 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
+        config.module.rules.push({
+          test: /\.css|styl$/,
+          loader: ['vue-style-loader', 'css-loader', 'stylus-loader'],
+          exclude: /(node_modules)/
+        })
+        config.module.rules.push({
+          test: /\.pug$/,
+          loader: ['pug-plain-loader'],
+          exclude: /(node_modules)/
+        })
       }
     }
-  }
+  },
+  transition: {
+    name: 'fade',
+    mode: 'out-in',
+  },
 }

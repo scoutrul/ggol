@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import api from '@/services/'
+// import api from '@/services/'
 
 export default {
   props: ['leagueId'],
@@ -32,9 +32,9 @@ export default {
     league: {}
   }),
   created() {
-    api.getLeague(this.leagueId).then(() => {
-      this.league = this.$store.state.leagues[this.leagueId]
-    })
+    // api.getLeague(this.leagueId).then(() => {
+    //   this.league = this.$store.state.leagues[this.leagueId]
+    // })
   }
 }
 </script>
