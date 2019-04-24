@@ -1,41 +1,32 @@
 <template>
   <v-layout column class="league">
     <v-flex>
-      <img v-if="league.logo" :src="league.logo" height="80px" />
-      <img v-if="league.flag" :src="league.flag" height="80px" />
+      <img v-if="data.logo" :src="data.logo" height="80px" />
+      <img v-if="data.flag" :src="data.flag" height="80px" />
     </v-flex>
-    <h1>{{ league.name }}</h1>
+    <h1>{{ data.name }}</h1>
     <v-flex>
-      <router-link
+      <nuxt-link
         :to="{
-          name: 'league',
-          params: { id: leagueId },
-          path: `/leagues/${leagueId}`
+          params: { id: data.leagueId },
+          path: `/leagues/${data.leagueId}`
         }"
-        >Таблица</router-link
+        >Таблица</nuxt-link
       >
     </v-flex>
-    <v-flex>Сезон: {{ league.season }}</v-flex>
+    <v-flex>Сезон: {{ data.season }}</v-flex>
     <v-flex>
-      Длительность цикла: {{ league.season_start }} -
-      {{ league.season_end }}
+      Длительность цикла: {{ data.season_start }} -
+      {{ data.season_end }}
     </v-flex>
   </v-layout>
 </template>
 
 <script>
-// import api from '@/services/'
+import api from '@/plugins/api'
 
 export default {
-  props: ['leagueId'],
-  data: () => ({
-    league: {}
-  }),
-  created() {
-    // api.getLeague(this.leagueId).then(() => {
-    //   this.league = this.$store.state.leagues[this.leagueId]
-    // })
-  }
+  props: ['data'],
 }
 </script>
 <style lang='stylus'>

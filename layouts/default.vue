@@ -1,15 +1,15 @@
 <template lang="pug">
-  v-app(dark)
-    v-toolbar(:clipped-left="true" fixed app)
+  v-app
+    v-toolbar(:clipped-left="true" fixed app dark)
       v-toolbar-title(v-text="title")
-        LogoHeader
-        Menu
+      LogoHeader
+      Menu
       v-spacer
     Main
       Body
         v-fade-transition(mode="out-in")
           nuxt
-    v-footer(:fixed="fixed" app)
+    v-footer(:fixed="fixed" app dark)
       span &copy; GGol.ru 2019
 </template>
 

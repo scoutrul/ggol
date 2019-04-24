@@ -1,16 +1,12 @@
 <template>
   <ul class="menu flex">
-    <li><router-link to="/">Home</router-link></li>
-    <li><router-link to="/leagues">Leagues</router-link></li>
-    <li><router-link to="/live">Live</router-link></li>
+    <li><nuxt-link to="/">Home</nuxt-link></li>
+    <li><nuxt-link to="/leagues">Leagues</nuxt-link></li>
+    <li><nuxt-link to="/live">Live</nuxt-link></li>
   </ul>
 </template>
-
 <script>
-import { $viewport } from '../../../mixins'
-
 export default {
-  mixins: [$viewport]
 }
 </script>
 <style lang="stylus">

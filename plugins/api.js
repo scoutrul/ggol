@@ -2,7 +2,6 @@ import Vue from 'vue'
 import get from 'lodash/get'
 import axios from 'axios'
 import each from 'lodash/each'
-import store from '../store'
 
 const url = 'https://api-football-v1.p.rapidapi.com'
 const token = 'fe81e0a8ecmsh0ef111a4d181d40p176c6ejsn1f163ba39e44'
@@ -42,7 +41,7 @@ const api = {
       })
     })
   },
-  getTeam(teamId) {
+  getTeam(store, teamId) {
     if (!teamId) {
       return new Promise(resolve => resolve())
     }
@@ -115,11 +114,10 @@ const api = {
     return axios.get(`${url}/${path}`).then(res => {
       const leagues = res.data.api.leagues
       const results = res.data.api.results
-
       store.commit('STORE_LEAGUES', { leagues, results })
     })
   },
-  getLeague(leagueId) {
+  getLeague(store, leagueId) {
     if (!leagueId) {
       return new Promise(resolve => resolve())
     }
@@ -134,7 +132,7 @@ const api = {
       })
     })
   },
-  getLeagueTable(leagueId) {
+  getLeagueTable(store, leagueId) {
     if (!leagueId) {
       return new Promise(resolve => resolve())
     }

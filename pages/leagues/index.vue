@@ -1,5 +1,5 @@
 <template>
-  <div class="container mainpage">
+  <div class="container">
     <h1>Leagues</h1>
     <div v-for="league of leagues" :key="league.league_id">
       <CountryFlag :league_id="league.league_id" />
@@ -31,19 +31,15 @@ export default {
   data: () => ({
     leagues: {}
   }),
-  asyncData ({ store, params, app }) {
-     return api.getLeagues(store).then(() => {
-       return {
-         leagues: store.state.leagues
-       }
-     })
+  async asyncData ({ store, params }) {
+     await api.getLeagues(store)
+     return {
+        leagues: store.state.leagues
+      }
   }
 }
 </script>
 
 <style lang="stylus">
-.mainpage {
-  margin-top: 56px;
-  color: #000;
-}
+
 </style>

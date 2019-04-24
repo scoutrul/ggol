@@ -3,7 +3,6 @@ const pkg = require('./package')
 
 // eslint-disable-next-line nuxt/no-cjs-in-config
 module.exports = {
-  // mode: 'universal',
   mode: 'universal',
   dev: true,
   devtools: true,
