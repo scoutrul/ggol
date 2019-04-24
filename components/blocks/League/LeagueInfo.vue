@@ -8,8 +8,8 @@
     <v-flex>
       <nuxt-link
         :to="{
-          params: { id: data.leagueId },
-          path: `/leagues/${data.leagueId}`
+          params: { id: data.league_id },
+          path: `/leagues/${data.league_id}`
         }"
         >Таблица</nuxt-link
       >

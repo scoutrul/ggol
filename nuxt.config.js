@@ -6,7 +6,6 @@ module.exports = {
   mode: 'universal',
   dev: true,
   devtools: true,
-  runtimeCompiler:true,
   head: {
     title: pkg.name,
     meta: [

@@ -5,7 +5,6 @@
       <CountryFlag :league_id="league.league_id" />
       <nuxt-link
         :to="{
-          name: 'league',
           params: {
             id: league.league_id
           },

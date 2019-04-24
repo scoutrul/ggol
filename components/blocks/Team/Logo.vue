@@ -23,11 +23,12 @@ export default {
     resolved: false
   }),
 
-  created() {
-    api.getTeam(this.team_id).then(() => {
-      this.team = this.$store.state.teams[this.team_id]
-      this.resolved = true
-    })
+  asyncData(context) {
+    console.log(context)
+    // api.getTeam(this.team_id).then(() => {
+    //   this.team = this.$store.state.teams[this.team_id]
+    //   this.resolved = true
+    // })
   },
 }
 </script>
