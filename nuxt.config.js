@@ -4,9 +4,10 @@ const pkg = require('./package')
 // eslint-disable-next-line nuxt/no-cjs-in-config
 module.exports = {
   // mode: 'universal',
-  mode: 'spa',
+  mode: 'universal',
   dev: true,
   devtools: true,
+  runtimeCompiler:true,
   head: {
     title: pkg.name,
     meta: [
@@ -20,7 +21,7 @@ module.exports = {
 
   ],
 
-  plugins: ['@/plugins/vuetify', '@/plugins/core-components', '@/plugins/api.js'],
+  plugins: ['~/plugins/vuetify.js', '~/plugins/core-components', '~/plugins/api.js'],
 
   modules: [
     '@nuxtjs/style-resources',
@@ -64,17 +65,17 @@ module.exports = {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
+          loader: ['vue-loader', 'style-loader', 'css-loader', 'stylus-loader'],
           exclude: /(node_modules)/
         })
         config.module.rules.push({
           test: /\.styl$/,
-          loader: ['css-loader', 'stylus-loader'],
+          loader: ['style-loader', 'css-loader', 'stylus-loader'],
           exclude: /(node_modules)/
         })
         config.module.rules.push({
           test: /\.css$/,
-          loader: ['vue-style-loader', 'css-loader', 'style-loader'],
+          loader: ['style-loader', 'css-loader', 'vue-style-loader'],
           exclude: /(node_modules)/
         })
         config.module.rules.push({
