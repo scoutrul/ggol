@@ -42,29 +42,41 @@ export default {
     TeamLogo,
     LeagueInfo
   },
-  data: () => ({
-    table: [],
-    league: {},
-    leagueId: 0,
-    resolved: false
-  }),
-  async asyncData ({ store, route }) {
+  async asyncData ({ store, route, app }) {
     const leagueId = route.params.id
-
-    await api.getLeague(store, leagueId)
-    await api.getLeagueTable(store, leagueId)
-    await api.getLeague(store, leagueId).then(async()=>{
-      for(const team in store.state.leagueTables[leagueId]){
-        await api.getTeam(store, team.team_id)
+    const league = await api.getLeague(store, leagueId).then(() => {
+      return store.state.leagues[leagueId]
+    });
+    const table = await api.getLeagueTable(store, leagueId).then(table => {
+      for(const team of table){
+        api.getTeam(store, team.team_id)
       }
+      return table
     })
     return {
-      table: store.state.leagueTables[leagueId],
-      league: store.state.leagues[leagueId],
+      table,
+      league,
       leagueId,
-      resolved: store.state.leagueTables[leagueId] &&
-        store.state.leagues[leagueId]
+      resolved: (store.state.leagueTables[leagueId] && store.state.leagues[leagueId]),
+      teams: store.teams
     }
+
+    // api.getLeague(store, leagueId).then(() => {
+    //   api.getLeagueTable(store, leagueId).then(() => {
+    //     for(const team in store.state.leagueTables[leagueId]){
+    //       api.getTeam(store, team.team_id)
+    //       return {resolved: true}
+    //     }
+    //   })
+    // })
+      // return {
+      //   table: store.state.leagueTables[leagueId],
+      //   league: store.state.leagues[leagueId],
+      //   leagueId,
+      //   resolved: (store.state.leagueTables[leagueId] &&
+      //     store.state.leagues[leagueId]),
+      //   teams: store.teams
+      // }
   },
 
 }

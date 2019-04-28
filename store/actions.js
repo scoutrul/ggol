@@ -28,5 +28,8 @@ export default {
   },
   STORE_LEAGUE_TABLE: (context, payload) => {
     context.commit('STORE_LEAGUE_TABLE', payload)
+  },
+  STORE_COUNTRIES: ({ commit }, payload) => {
+    commit('STORE_COUNTRIES', payload)
   }
 }

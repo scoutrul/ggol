@@ -3,12 +3,22 @@ import get from 'lodash/get'
 import axios from 'axios'
 import each from 'lodash/each'
 
-const url = 'https://api-football-v1.p.rapidapi.com'
+const url = 'http://livescore-api.com/api-client/'
 const token = 'fe81e0a8ecmsh0ef111a4d181d40p176c6ejsn1f163ba39e44'
 
 axios.defaults.headers.common['X-RapidAPI-Key'] = token
+axios.defaults.params = { 'key': 'Sx4t08xejLuguIFp', 'secret' :'Za7LfWferXMHP7xHECbEKIS4unkZ60o5' }
 
 const api = {
+  api: {
+    getListCountries(store){
+      return this.getApi('countries/list.json').then(res => {
+        const { countries } = res.data.country
+        store.commit('STORE_COUNTRIES', { countries })
+      })
+    },
+  },
+
   getApi(path) {
     return axios.get(`${url}/${path}`).then(res => res)
   },
@@ -25,22 +35,7 @@ const api = {
       store.commit('STORE_TODAY_FIXTURES', { fixtures })
     })
   },
-  apiService(entityId, path) {
-    if (!entityId) {
-      return new Promise(resolve => resolve())
-    }
-    if (store.state.leagues[entityId]) {
-      return new Promise(resolve => resolve())
-    }
-    return axios.get(`${url}/${path}/${entityId}`).then(res => {
-      const entities = 'leagues'
-      const league = get(`res.data.api.${entities}[${entityId}]`, {})
-      store.commit('STORE_LEAGUE', {
-        entityId,
-        league
-      })
-    })
-  },
+
   getTeam(store, teamId) {
     if (!teamId) {
       return new Promise(resolve => resolve())
@@ -50,10 +45,7 @@ const api = {
     }
     return axios.get(`${url}/teams/team/${teamId}`).then(res => {
       const team = res.data.api.teams[teamId]
-      store.commit('STORE_TEAM', {
-        teamId,
-        team
-      })
+      store.commit('STORE_TEAM', { teamId, team })
     })
   },
   getFixture(fixtureId) {
@@ -142,6 +134,7 @@ const api = {
     return axios.get(`${url}/leagueTable/${leagueId}`).then(res => {
       const table = res.data.api.standings[0]
       store.commit('STORE_LEAGUE_TABLE', { leagueId, table })
+      return table
     })
   },
   getH2H(teamId1, teamId2) {
@@ -164,6 +157,6 @@ const api = {
   }
 }
 
-export default api;
+export default api
 
-Vue.use('api', api)
+Vue.use('$api', api)

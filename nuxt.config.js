@@ -19,7 +19,10 @@ module.exports = {
 
   ],
 
-  plugins: ['~/plugins/vuetify.js', '~/plugins/core-components', '~/plugins/api.js'],
+  plugins: [
+    '~plugins/vuetify',
+    '~plugins/core-components',
+    '~plugins/api'],
 
   modules: [
     '@nuxtjs/style-resources',
@@ -39,6 +42,7 @@ module.exports = {
   },
 
   build: {
+    vendor: ['axios'],
     analyze: true,
     transpile: ['vuetify/lib'],
     plugins: [new VuetifyLoaderPlugin()],

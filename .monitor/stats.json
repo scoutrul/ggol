@@ -72598,5 +72598,2182 @@
         ]
       }
     ]
+  },
+  {
+    "timeStamp": 1556408226647,
+    "time": 65241,
+    "hash": "b95bca6e9d23dfa8b99a",
+    "errors": [],
+    "size": 452255,
+    "assets": [
+      {
+        "name": "../server/client.manifest.json",
+        "chunks": [],
+        "size": 14424
+      },
+      {
+        "name": "../server/index.spa.html",
+        "chunks": [],
+        "size": 409
+      },
+      {
+        "name": "../server/index.ssr.html",
+        "chunks": [],
+        "size": 149
+      },
+      {
+        "name": "LICENSES",
+        "chunks": [],
+        "size": 609
+      },
+      {
+        "name": "app.js",
+        "chunks": [
+          0
+        ],
+        "size": 65145,
+        "minified": true
+      },
+      {
+        "name": "commons.app.js",
+        "chunks": [
+          1
+        ],
+        "size": 175259,
+        "minified": true
+      },
+      {
+        "name": "icons/icon_120.9mld2VBMsQ$.png",
+        "chunks": [],
+        "size": 3128
+      },
+      {
+        "name": "icons/icon_144.9mld2VBMsQ$.png",
+        "chunks": [],
+        "size": 3866
+      },
+      {
+        "name": "icons/icon_152.9mld2VBMsQ$.png",
+        "chunks": [],
+        "size": 4055
+      },
+      {
+        "name": "icons/icon_192.9mld2VBMsQ$.png",
+        "chunks": [],
+        "size": 5127
+      },
+      {
+        "name": "icons/icon_384.9mld2VBMsQ$.png",
+        "chunks": [],
+        "size": 11275
+      },
+      {
+        "name": "icons/icon_512.9mld2VBMsQ$.png",
+        "chunks": [],
+        "size": 14230
+      },
+      {
+        "name": "icons/icon_64.9mld2VBMsQ$.png",
+        "chunks": [],
+        "size": 1652
+      },
+      {
+        "name": "manifest.96d05992.json",
+        "chunks": [],
+        "size": 818
+      },
+      {
+        "name": "pages_leagues__id.js",
+        "chunks": [
+          2
+        ],
+        "size": 2640,
+        "minified": true
+      },
+      {
+        "name": "pages_leagues_index.js",
+        "chunks": [
+          3
+        ],
+        "size": 1068,
+        "minified": true
+      },
+      {
+        "name": "pages_team__id.js",
+        "chunks": [
+          4
+        ],
+        "size": 397,
+        "minified": true
+      },
+      {
+        "name": "runtime.js",
+        "chunks": [
+          5
+        ],
+        "size": 2322,
+        "minified": true
+      },
+      {
+        "name": "vendors.app.js",
+        "chunks": [
+          6
+        ],
+        "size": 145682,
+        "minified": true
+      }
+    ],
+    "chunks": [
+      {
+        "size": 163239,
+        "files": [
+          "app.js"
+        ],
+        "modules": [
+          {
+            "name": "./.nuxt/utils.js",
+            "size": 19575,
+            "id": 3
+          },
+          {
+            "name": "./.nuxt/index.js + 46 modules",
+            "size": 52839,
+            "id": 46
+          },
+          {
+            "name": "./plugins/api.js",
+            "size": 6011,
+            "id": 61
+          },
+          {
+            "name": "./node_modules/vue-style-loader??ref--5-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--5-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--5-oneOf-1-2!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib??vue-loader-options!./.nuxt/components/nuxt-loading.vue?vue&type=style&index=0&lang=css&",
+            "size": 768,
+            "id": 87
+          },
+          {
+            "name": "./node_modules/vue-style-loader??ref--5-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--5-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--5-oneOf-1-2!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib??vue-loader-options!./components/layout/Main.vue?vue&type=style&index=0&lang=css&",
+            "size": 760,
+            "id": 88
+          },
+          {
+            "name": "./node_modules/vue-style-loader??ref--10-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--10-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--10-oneOf-1-2!./node_modules/stylus-loader??ref--10-oneOf-1-3!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib??vue-loader-options!./components/blocks/Menu/Menu.vue?vue&type=style&index=0&lang=stylus&",
+            "size": 847,
+            "id": 89
+          },
+          {
+            "name": "./node_modules/vue-style-loader??ref--10-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--10-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--10-oneOf-1-2!./node_modules/stylus-loader??ref--10-oneOf-1-3!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib??vue-loader-options!./components/blocks/Logo/LogoHeader.vue?vue&type=style&index=0&lang=stylus&",
+            "size": 853,
+            "id": 90
+          },
+          {
+            "name": "./node_modules/vue-style-loader??ref--10-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--10-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--10-oneOf-1-2!./node_modules/stylus-loader??ref--10-oneOf-1-3!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib??vue-loader-options!./components/blocks/Team/TeamVsTeam.vue?vue&type=style&index=0&lang=stylus&",
+            "size": 853,
+            "id": 91
+          },
+          {
+            "name": "./node_modules/vue-style-loader??ref--10-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--10-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--10-oneOf-1-2!./node_modules/stylus-loader??ref--10-oneOf-1-3!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib??vue-loader-options!./components/blocks/League/LeagueInfo.vue?vue&type=style&index=0&lang=stylus&",
+            "size": 853,
+            "id": 92
+          },
+          {
+            "name": "./node_modules/vue-style-loader??ref--10-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--10-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--10-oneOf-1-2!./node_modules/stylus-loader??ref--10-oneOf-1-3!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib??vue-loader-options!./layouts/default.vue?vue&type=style&index=0&id=fc7eec44&lang=stylus&scoped=true&",
+            "size": 832,
+            "id": 93
+          },
+          {
+            "name": "./.nuxt/components/nuxt-link.client.js",
+            "size": 3488,
+            "id": 97
+          },
+          {
+            "name": "./components/blocks/index.js + 47 modules",
+            "size": 27517,
+            "id": 125
+          },
+          {
+            "name": "./store/actions.js",
+            "size": 1173,
+            "id": 128
+          },
+          {
+            "name": "./store/mutations.js",
+            "size": 1943,
+            "id": 129
+          },
+          {
+            "name": "./store/getters.js",
+            "size": 80,
+            "id": 130
+          },
+          {
+            "name": "./.nuxt/middleware.js",
+            "size": 47,
+            "id": 133
+          },
+          {
+            "name": "./.nuxt/sw.plugin.js",
+            "size": 330,
+            "id": 136
+          },
+          {
+            "name": "./plugins/core-components.js",
+            "size": 124,
+            "id": 137
+          },
+          {
+            "name": "multi ./.nuxt/client.js",
+            "size": 28,
+            "id": 196
+          },
+          {
+            "name": "./.nuxt/client.js",
+            "size": 26801,
+            "id": 197
+          },
+          {
+            "name": "./.nuxt/components/nuxt-loading.vue?vue&type=style&index=0&lang=css&",
+            "size": 882,
+            "id": 226
+          },
+          {
+            "name": "./node_modules/css-loader/dist/cjs.js??ref--5-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--5-oneOf-1-2!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib??vue-loader-options!./.nuxt/components/nuxt-loading.vue?vue&type=style&index=0&lang=css&",
+            "size": 561,
+            "id": 227
+          },
+          {
+            "name": "./components/layout/Main.vue?vue&type=style&index=0&lang=css&",
+            "size": 866,
+            "id": 234
+          },
+          {
+            "name": "./node_modules/css-loader/dist/cjs.js??ref--5-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--5-oneOf-1-2!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib??vue-loader-options!./components/layout/Main.vue?vue&type=style&index=0&lang=css&",
+            "size": 192,
+            "id": 235
+          },
+          {
+            "name": "./components/blocks/Menu/Menu.vue?vue&type=style&index=0&lang=stylus&",
+            "size": 1042,
+            "id": 236
+          },
+          {
+            "name": "./node_modules/css-loader/dist/cjs.js??ref--10-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--10-oneOf-1-2!./node_modules/stylus-loader??ref--10-oneOf-1-3!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib??vue-loader-options!./components/blocks/Menu/Menu.vue?vue&type=style&index=0&lang=stylus&",
+            "size": 1921,
+            "id": 237
+          },
+          {
+            "name": "./components/blocks/Logo/LogoHeader.vue?vue&type=style&index=0&lang=stylus&",
+            "size": 1054,
+            "id": 238
+          },
+          {
+            "name": "./node_modules/css-loader/dist/cjs.js??ref--10-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--10-oneOf-1-2!./node_modules/stylus-loader??ref--10-oneOf-1-3!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib??vue-loader-options!./components/blocks/Logo/LogoHeader.vue?vue&type=style&index=0&lang=stylus&",
+            "size": 385,
+            "id": 239
+          },
+          {
+            "name": "./components/blocks/Team/TeamVsTeam.vue?vue&type=style&index=0&lang=stylus&",
+            "size": 1054,
+            "id": 303
+          },
+          {
+            "name": "./node_modules/css-loader/dist/cjs.js??ref--10-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--10-oneOf-1-2!./node_modules/stylus-loader??ref--10-oneOf-1-3!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib??vue-loader-options!./components/blocks/Team/TeamVsTeam.vue?vue&type=style&index=0&lang=stylus&",
+            "size": 2211,
+            "id": 304
+          },
+          {
+            "name": "./components/blocks/League/LeagueInfo.vue?vue&type=style&index=0&lang=stylus&",
+            "size": 1054,
+            "id": 360
+          },
+          {
+            "name": "./node_modules/css-loader/dist/cjs.js??ref--10-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--10-oneOf-1-2!./node_modules/stylus-loader??ref--10-oneOf-1-3!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib??vue-loader-options!./components/blocks/League/LeagueInfo.vue?vue&type=style&index=0&lang=stylus&",
+            "size": 183,
+            "id": 361
+          },
+          {
+            "name": "./layouts/default.vue?vue&type=style&index=0&id=fc7eec44&lang=stylus&scoped=true&",
+            "size": 1012,
+            "id": 362
+          },
+          {
+            "name": "./node_modules/css-loader/dist/cjs.js??ref--10-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--10-oneOf-1-2!./node_modules/stylus-loader??ref--10-oneOf-1-3!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib??vue-loader-options!./layouts/default.vue?vue&type=style&index=0&id=fc7eec44&lang=stylus&scoped=true&",
+            "size": 4482,
+            "id": 363
+          },
+          {
+            "name": "./store/index.js",
+            "size": 618,
+            "id": 383
+          }
+        ]
+      },
+      {
+        "size": 543018,
+        "files": [
+          "commons.app.js"
+        ],
+        "modules": [
+          {
+            "name": "./node_modules/vue/dist/vue.runtime.esm.js",
+            "size": 227112,
+            "id": 0
+          },
+          {
+            "name": "./node_modules/vue-loader/lib/runtime/componentNormalizer.js",
+            "size": 2689,
+            "id": 2
+          },
+          {
+            "name": "./node_modules/core-js/modules/_wks.js",
+            "size": 358,
+            "id": 6
+          },
+          {
+            "name": "./node_modules/core-js/modules/_export.js",
+            "size": 1601,
+            "id": 11
+          },
+          {
+            "name": "./node_modules/core-js/modules/_global.js",
+            "size": 369,
+            "id": 12
+          },
+          {
+            "name": "./node_modules/core-js/modules/_an-object.js",
+            "size": 154,
+            "id": 14
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.object.to-string.js",
+            "size": 321,
+            "id": 15
+          },
+          {
+            "name": "./node_modules/axios/index.js",
+            "size": 40,
+            "id": 17
+          },
+          {
+            "name": "./node_modules/core-js/modules/_is-object.js",
+            "size": 110,
+            "id": 18
+          },
+          {
+            "name": "./node_modules/core-js/modules/_fails.js",
+            "size": 104,
+            "id": 19
+          },
+          {
+            "name": "./node_modules/core-js/modules/_object-dp.js",
+            "size": 600,
+            "id": 20
+          },
+          {
+            "name": "./node_modules/core-js/modules/_descriptors.js",
+            "size": 184,
+            "id": 21
+          },
+          {
+            "name": "./node_modules/axios/lib/utils.js",
+            "size": 7541,
+            "id": 22
+          },
+          {
+            "name": "./node_modules/core-js/modules/_redefine.js",
+            "size": 1050,
+            "id": 24
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.function.name.js",
+            "size": 355,
+            "id": 25
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.number.constructor.js",
+            "size": 2793,
+            "id": 26
+          },
+          {
+            "name": "./node_modules/core-js/modules/web.dom.iterable.js",
+            "size": 1810,
+            "id": 30
+          },
+          {
+            "name": "./node_modules/core-js/modules/es7.symbol.async-iterator.js",
+            "size": 43,
+            "id": 32
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.symbol.js",
+            "size": 8851,
+            "id": 33
+          },
+          {
+            "name": "./node_modules/core-js/modules/_defined.js",
+            "size": 162,
+            "id": 34
+          },
+          {
+            "name": "./node_modules/core-js/modules/_core.js",
+            "size": 122,
+            "id": 35
+          },
+          {
+            "name": "./node_modules/core-js/modules/_hide.js",
+            "size": 286,
+            "id": 36
+          },
+          {
+            "name": "./node_modules/core-js/modules/_has.js",
+            "size": 120,
+            "id": 37
+          },
+          {
+            "name": "./node_modules/core-js/modules/_to-length.js",
+            "size": 215,
+            "id": 38
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.regexp.split.js",
+            "size": 5227,
+            "id": 39
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.regexp.replace.js",
+            "size": 4657,
+            "id": 40
+          },
+          {
+            "name": "./node_modules/core-js/modules/_ctx.js",
+            "size": 520,
+            "id": 41
+          },
+          {
+            "name": "./node_modules/core-js/modules/_object-keys.js",
+            "size": 222,
+            "id": 42
+          },
+          {
+            "name": "./node_modules/core-js/modules/_to-iobject.js",
+            "size": 217,
+            "id": 43
+          },
+          {
+            "name": "./node_modules/core-js/modules/_cof.js",
+            "size": 106,
+            "id": 44
+          },
+          {
+            "name": "(webpack)/buildin/global.js",
+            "size": 472,
+            "id": 47
+          },
+          {
+            "name": "./node_modules/core-js/modules/_to-object.js",
+            "size": 132,
+            "id": 48
+          },
+          {
+            "name": "./node_modules/core-js/modules/es7.array.includes.js",
+            "size": 379,
+            "id": 49
+          },
+          {
+            "name": "./node_modules/regenerator-runtime/runtime.js",
+            "size": 24076,
+            "id": 51
+          },
+          {
+            "name": "./node_modules/core-js/modules/_to-integer.js",
+            "size": 161,
+            "id": 52
+          },
+          {
+            "name": "./node_modules/core-js/modules/_library.js",
+            "size": 24,
+            "id": 53
+          },
+          {
+            "name": "./node_modules/core-js/modules/_property-desc.js",
+            "size": 173,
+            "id": 54
+          },
+          {
+            "name": "./node_modules/core-js/modules/_uid.js",
+            "size": 162,
+            "id": 55
+          },
+          {
+            "name": "./node_modules/core-js/modules/_iterators.js",
+            "size": 21,
+            "id": 56
+          },
+          {
+            "name": "./node_modules/core-js/modules/_object-pie.js",
+            "size": 37,
+            "id": 57
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.string.includes.js",
+            "size": 479,
+            "id": 58
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.object.keys.js",
+            "size": 225,
+            "id": 59
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.string.starts-with.js",
+            "size": 762,
+            "id": 60
+          },
+          {
+            "name": "./node_modules/vuex/dist/vuex.esm.js",
+            "size": 29121,
+            "id": 66
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.string.iterator.js",
+            "size": 531,
+            "id": 67
+          },
+          {
+            "name": "./node_modules/core-js/modules/_to-primitive.js",
+            "size": 655,
+            "id": 68
+          },
+          {
+            "name": "./node_modules/core-js/modules/_shared.js",
+            "size": 427,
+            "id": 69
+          },
+          {
+            "name": "./node_modules/core-js/modules/_a-function.js",
+            "size": 125,
+            "id": 70
+          },
+          {
+            "name": "./node_modules/core-js/modules/_set-to-string-tag.js",
+            "size": 262,
+            "id": 71
+          },
+          {
+            "name": "./node_modules/core-js/modules/_object-gopn.js",
+            "size": 288,
+            "id": 72
+          },
+          {
+            "name": "./node_modules/core-js/modules/_regexp-exec-abstract.js",
+            "size": 615,
+            "id": 73
+          },
+          {
+            "name": "./node_modules/core-js/modules/_classof.js",
+            "size": 718,
+            "id": 74
+          },
+          {
+            "name": "./node_modules/core-js/modules/_fix-re-wks.js",
+            "size": 3333,
+            "id": 75
+          },
+          {
+            "name": "./node_modules/core-js/modules/_flags.js",
+            "size": 370,
+            "id": 76
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.regexp.to-string.js",
+            "size": 826,
+            "id": 77
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.date.to-string.js",
+            "size": 435,
+            "id": 78
+          },
+          {
+            "name": "./node_modules/core-js/modules/_dom-create.js",
+            "size": 289,
+            "id": 98
+          },
+          {
+            "name": "./node_modules/core-js/modules/_object-create.js",
+            "size": 1505,
+            "id": 99
+          },
+          {
+            "name": "./node_modules/core-js/modules/_iobject.js",
+            "size": 289,
+            "id": 100
+          },
+          {
+            "name": "./node_modules/core-js/modules/_shared-key.js",
+            "size": 159,
+            "id": 101
+          },
+          {
+            "name": "./node_modules/core-js/modules/_enum-bug-keys.js",
+            "size": 160,
+            "id": 102
+          },
+          {
+            "name": "./node_modules/core-js/modules/_object-gops.js",
+            "size": 42,
+            "id": 103
+          },
+          {
+            "name": "./node_modules/core-js/modules/_object-gopd.js",
+            "size": 577,
+            "id": 104
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.regexp.match.js",
+            "size": 1396,
+            "id": 105
+          },
+          {
+            "name": "./node_modules/core-js/modules/_advance-string-index.js",
+            "size": 262,
+            "id": 106
+          },
+          {
+            "name": "./node_modules/core-js/modules/_regexp-exec.js",
+            "size": 1740,
+            "id": 107
+          },
+          {
+            "name": "./node_modules/core-js/modules/_add-to-unscopables.js",
+            "size": 297,
+            "id": 108
+          },
+          {
+            "name": "./node_modules/core-js/modules/_is-regexp.js",
+            "size": 289,
+            "id": 109
+          },
+          {
+            "name": "./node_modules/core-js/modules/_object-sap.js",
+            "size": 370,
+            "id": 110
+          },
+          {
+            "name": "./node_modules/core-js/modules/_species-constructor.js",
+            "size": 348,
+            "id": 111
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.string.repeat.js",
+            "size": 156,
+            "id": 112
+          },
+          {
+            "name": "./node_modules/axios/lib/defaults.js",
+            "size": 2432,
+            "id": 118
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.string.fixed.js",
+            "size": 189,
+            "id": 123
+          },
+          {
+            "name": "./node_modules/core-js/modules/_string-html.js",
+            "size": 702,
+            "id": 124
+          },
+          {
+            "name": "./node_modules/vue-router/dist/vue-router.esm.js",
+            "size": 67815,
+            "id": 134
+          },
+          {
+            "name": "./node_modules/core-js/modules/_string-at.js",
+            "size": 620,
+            "id": 138
+          },
+          {
+            "name": "./node_modules/core-js/modules/_iter-define.js",
+            "size": 2779,
+            "id": 139
+          },
+          {
+            "name": "./node_modules/core-js/modules/_ie8-dom-define.js",
+            "size": 199,
+            "id": 140
+          },
+          {
+            "name": "./node_modules/core-js/modules/_object-keys-internal.js",
+            "size": 537,
+            "id": 141
+          },
+          {
+            "name": "./node_modules/core-js/modules/_array-includes.js",
+            "size": 924,
+            "id": 142
+          },
+          {
+            "name": "./node_modules/core-js/modules/_html.js",
+            "size": 101,
+            "id": 143
+          },
+          {
+            "name": "./node_modules/core-js/modules/_wks-define.js",
+            "size": 417,
+            "id": 144
+          },
+          {
+            "name": "./node_modules/core-js/modules/_wks-ext.js",
+            "size": 31,
+            "id": 145
+          },
+          {
+            "name": "./node_modules/core-js/modules/_meta.js",
+            "size": 1558,
+            "id": 146
+          },
+          {
+            "name": "./node_modules/core-js/modules/_is-array.js",
+            "size": 147,
+            "id": 147
+          },
+          {
+            "name": "./node_modules/core-js/modules/_string-context.js",
+            "size": 314,
+            "id": 148
+          },
+          {
+            "name": "./node_modules/core-js/modules/_fails-is-regexp.js",
+            "size": 251,
+            "id": 149
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.array.iterator.js",
+            "size": 1116,
+            "id": 150
+          },
+          {
+            "name": "./node_modules/core-js/modules/_iter-call.js",
+            "size": 410,
+            "id": 151
+          },
+          {
+            "name": "./node_modules/core-js/modules/_is-array-iter.js",
+            "size": 279,
+            "id": 152
+          },
+          {
+            "name": "./node_modules/core-js/modules/core.get-iterator-method.js",
+            "size": 297,
+            "id": 153
+          },
+          {
+            "name": "./node_modules/core-js/modules/_task.js",
+            "size": 2484,
+            "id": 154
+          },
+          {
+            "name": "./node_modules/core-js/modules/_new-promise-capability.js",
+            "size": 504,
+            "id": 155
+          },
+          {
+            "name": "./node_modules/core-js/modules/_promise-resolve.js",
+            "size": 397,
+            "id": 156
+          },
+          {
+            "name": "./node_modules/core-js/modules/_set-species.js",
+            "size": 359,
+            "id": 157
+          },
+          {
+            "name": "./node_modules/core-js/modules/_iter-detect.js",
+            "size": 645,
+            "id": 158
+          },
+          {
+            "name": "./node_modules/core-js/modules/_inherit-if-required.js",
+            "size": 337,
+            "id": 159
+          },
+          {
+            "name": "./node_modules/node-libs-browser/node_modules/process/browser.js",
+            "size": 5418,
+            "id": 160
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.array.from.js",
+            "size": 1635,
+            "id": 161
+          },
+          {
+            "name": "./node_modules/axios/lib/helpers/bind.js",
+            "size": 256,
+            "id": 169
+          },
+          {
+            "name": "./node_modules/axios/lib/adapters/xhr.js",
+            "size": 6170,
+            "id": 170
+          },
+          {
+            "name": "./node_modules/axios/lib/core/createError.js",
+            "size": 625,
+            "id": 171
+          },
+          {
+            "name": "./node_modules/axios/lib/cancel/isCancel.js",
+            "size": 102,
+            "id": 172
+          },
+          {
+            "name": "./node_modules/axios/lib/cancel/Cancel.js",
+            "size": 385,
+            "id": 173
+          },
+          {
+            "name": "(webpack)/buildin/module.js",
+            "size": 497,
+            "id": 176
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.string.small.js",
+            "size": 193,
+            "id": 185
+          },
+          {
+            "name": "./node_modules/vue-meta/lib/vue-meta.js",
+            "size": 42634,
+            "id": 187
+          },
+          {
+            "name": "./node_modules/core-js/modules/_function-to-string.js",
+            "size": 87,
+            "id": 198
+          },
+          {
+            "name": "./node_modules/core-js/modules/_iter-create.js",
+            "size": 526,
+            "id": 199
+          },
+          {
+            "name": "./node_modules/core-js/modules/_object-dps.js",
+            "size": 404,
+            "id": 200
+          },
+          {
+            "name": "./node_modules/core-js/modules/_to-absolute-index.js",
+            "size": 223,
+            "id": 201
+          },
+          {
+            "name": "./node_modules/core-js/modules/_object-gpo.js",
+            "size": 493,
+            "id": 202
+          },
+          {
+            "name": "./node_modules/core-js/modules/_enum-keys.js",
+            "size": 469,
+            "id": 203
+          },
+          {
+            "name": "./node_modules/core-js/modules/_object-gopn-ext.js",
+            "size": 604,
+            "id": 204
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.regexp.exec.js",
+            "size": 178,
+            "id": 205
+          },
+          {
+            "name": "./node_modules/core-js/modules/_iter-step.js",
+            "size": 86,
+            "id": 206
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.promise.js",
+            "size": 9812,
+            "id": 207
+          },
+          {
+            "name": "./node_modules/core-js/modules/_an-instance.js",
+            "size": 237,
+            "id": 208
+          },
+          {
+            "name": "./node_modules/core-js/modules/_for-of.js",
+            "size": 1176,
+            "id": 209
+          },
+          {
+            "name": "./node_modules/core-js/modules/_invoke.js",
+            "size": 701,
+            "id": 210
+          },
+          {
+            "name": "./node_modules/core-js/modules/_microtask.js",
+            "size": 1982,
+            "id": 211
+          },
+          {
+            "name": "./node_modules/core-js/modules/_perform.js",
+            "size": 132,
+            "id": 212
+          },
+          {
+            "name": "./node_modules/core-js/modules/_user-agent.js",
+            "size": 127,
+            "id": 213
+          },
+          {
+            "name": "./node_modules/core-js/modules/_redefine-all.js",
+            "size": 169,
+            "id": 214
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.object.assign.js",
+            "size": 162,
+            "id": 215
+          },
+          {
+            "name": "./node_modules/core-js/modules/_object-assign.js",
+            "size": 1195,
+            "id": 216
+          },
+          {
+            "name": "./node_modules/core-js/modules/es7.promise.finally.js",
+            "size": 763,
+            "id": 217
+          },
+          {
+            "name": "./node_modules/core-js/modules/_string-repeat.js",
+            "size": 373,
+            "id": 218
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.regexp.flags.js",
+            "size": 201,
+            "id": 219
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.regexp.constructor.js",
+            "size": 1608,
+            "id": 220
+          },
+          {
+            "name": "./node_modules/core-js/modules/_set-proto.js",
+            "size": 906,
+            "id": 221
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.regexp.search.js",
+            "size": 1192,
+            "id": 222
+          },
+          {
+            "name": "./node_modules/core-js/modules/_same-value.js",
+            "size": 190,
+            "id": 223
+          },
+          {
+            "name": "./node_modules/timers-browserify/main.js",
+            "size": 2022,
+            "id": 224
+          },
+          {
+            "name": "./node_modules/setimmediate/setImmediate.js",
+            "size": 6473,
+            "id": 225
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.object.freeze.js",
+            "size": 267,
+            "id": 228
+          },
+          {
+            "name": "./node_modules/core-js/modules/_string-trim.js",
+            "size": 899,
+            "id": 229
+          },
+          {
+            "name": "./node_modules/core-js/modules/_string-ws.js",
+            "size": 170,
+            "id": 230
+          },
+          {
+            "name": "./node_modules/core-js/modules/_create-property.js",
+            "size": 271,
+            "id": 231
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.object.is-extensible.js",
+            "size": 267,
+            "id": 232
+          },
+          {
+            "name": "./node_modules/axios/lib/axios.js",
+            "size": 1368,
+            "id": 268
+          },
+          {
+            "name": "./node_modules/is-buffer/index.js",
+            "size": 698,
+            "id": 269
+          },
+          {
+            "name": "./node_modules/axios/lib/core/Axios.js",
+            "size": 2187,
+            "id": 270
+          },
+          {
+            "name": "./node_modules/axios/lib/helpers/normalizeHeaderName.js",
+            "size": 357,
+            "id": 271
+          },
+          {
+            "name": "./node_modules/axios/lib/core/settle.js",
+            "size": 757,
+            "id": 272
+          },
+          {
+            "name": "./node_modules/axios/lib/core/enhanceError.js",
+            "size": 592,
+            "id": 273
+          },
+          {
+            "name": "./node_modules/axios/lib/helpers/buildURL.js",
+            "size": 1549,
+            "id": 274
+          },
+          {
+            "name": "./node_modules/axios/lib/helpers/parseHeaders.js",
+            "size": 1393,
+            "id": 275
+          },
+          {
+            "name": "./node_modules/axios/lib/helpers/isURLSameOrigin.js",
+            "size": 2245,
+            "id": 276
+          },
+          {
+            "name": "./node_modules/axios/lib/helpers/btoa.js",
+            "size": 986,
+            "id": 277
+          },
+          {
+            "name": "./node_modules/axios/lib/helpers/cookies.js",
+            "size": 1365,
+            "id": 278
+          },
+          {
+            "name": "./node_modules/axios/lib/core/InterceptorManager.js",
+            "size": 1251,
+            "id": 279
+          },
+          {
+            "name": "./node_modules/axios/lib/core/dispatchRequest.js",
+            "size": 2199,
+            "id": 280
+          },
+          {
+            "name": "./node_modules/axios/lib/core/transformData.js",
+            "size": 550,
+            "id": 281
+          },
+          {
+            "name": "./node_modules/axios/lib/helpers/isAbsoluteURL.js",
+            "size": 563,
+            "id": 282
+          },
+          {
+            "name": "./node_modules/axios/lib/helpers/combineURLs.js",
+            "size": 380,
+            "id": 283
+          },
+          {
+            "name": "./node_modules/axios/lib/cancel/CancelToken.js",
+            "size": 1240,
+            "id": 284
+          },
+          {
+            "name": "./node_modules/axios/lib/helpers/spread.js",
+            "size": 564,
+            "id": 285
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.math.cbrt.js",
+            "size": 218,
+            "id": 366
+          },
+          {
+            "name": "./node_modules/core-js/modules/_math-sign.js",
+            "size": 179,
+            "id": 367
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.string.link.js",
+            "size": 197,
+            "id": 372
+          },
+          {
+            "name": "./node_modules/core-js/modules/es6.array.find.js",
+            "size": 527,
+            "id": 377
+          },
+          {
+            "name": "./node_modules/core-js/modules/_array-methods.js",
+            "size": 1494,
+            "id": 378
+          },
+          {
+            "name": "./node_modules/core-js/modules/_array-species-create.js",
+            "size": 223,
+            "id": 379
+          },
+          {
+            "name": "./node_modules/core-js/modules/_array-species-constructor.js",
+            "size": 475,
+            "id": 380
+          },
+          {
+            "name": "./node_modules/core-js/modules/es7.object.values.js",
+            "size": 242,
+            "id": 384
+          },
+          {
+            "name": "./node_modules/core-js/modules/_object-to-array.js",
+            "size": 468,
+            "id": 385
+          }
+        ]
+      },
+      {
+        "size": 8350,
+        "files": [
+          "pages_leagues__id.js"
+        ],
+        "modules": [
+          {
+            "name": "./node_modules/vue-style-loader??ref--5-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--5-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--5-oneOf-1-2!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib??vue-loader-options!./pages/leagues/_id.vue?vue&type=style&index=0&lang=css&",
+            "size": 759,
+            "id": 396
+          },
+          {
+            "name": "./pages/leagues/_id.vue?vue&type=style&index=0&lang=css&",
+            "size": 864,
+            "id": 397
+          },
+          {
+            "name": "./node_modules/css-loader/dist/cjs.js??ref--5-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--5-oneOf-1-2!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib??vue-loader-options!./pages/leagues/_id.vue?vue&type=style&index=0&lang=css&",
+            "size": 272,
+            "id": 398
+          },
+          {
+            "name": "./pages/leagues/_id.vue + 4 modules",
+            "size": 6455,
+            "id": 400
+          }
+        ]
+      },
+      {
+        "size": 3046,
+        "files": [
+          "pages_leagues_index.js"
+        ],
+        "modules": [
+          {
+            "name": "./pages/leagues/index.vue + 4 modules",
+            "size": 3046,
+            "id": 399
+          }
+        ]
+      },
+      {
+        "size": 1153,
+        "files": [
+          "pages_team__id.js"
+        ],
+        "modules": [
+          {
+            "name": "./pages/team/_id.vue + 2 modules",
+            "size": 1153,
+            "id": 401
+          }
+        ]
+      },
+      {
+        "size": 0,
+        "files": [
+          "runtime.js"
+        ],
+        "modules": []
+      },
+      {
+        "size": 298387,
+        "files": [
+          "vendors.app.js"
+        ],
+        "modules": [
+          {
+            "name": "./node_modules/vuetify/lib/util/helpers.js",
+            "size": 11042,
+            "id": 1
+          },
+          {
+            "name": "./node_modules/vuetify/lib/index.js + 11 modules",
+            "size": 21759,
+            "id": 4
+          },
+          {
+            "name": "./node_modules/vuetify-loader/lib/runtime/installComponents.js",
+            "size": 664,
+            "id": 5
+          },
+          {
+            "name": "./node_modules/vuetify/lib/util/console.js",
+            "size": 3066,
+            "id": 7
+          },
+          {
+            "name": "./node_modules/@babel/runtime/helpers/esm/typeof.js",
+            "size": 771,
+            "id": 8
+          },
+          {
+            "name": "./node_modules/css-loader/dist/runtime/api.js",
+            "size": 2406,
+            "id": 9
+          },
+          {
+            "name": "./node_modules/vue-style-loader/lib/addStylesClient.js + 1 modules",
+            "size": 6869,
+            "id": 10
+          },
+          {
+            "name": "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js",
+            "size": 787,
+            "id": 13
+          },
+          {
+            "name": "./node_modules/@babel/runtime/helpers/esm/objectSpread.js + 1 modules",
+            "size": 870,
+            "id": 16
+          },
+          {
+            "name": "./node_modules/vuetify/lib/util/mixins.js",
+            "size": 298,
+            "id": 23
+          },
+          {
+            "name": "./node_modules/lodash/isArray.js",
+            "size": 488,
+            "id": 27
+          },
+          {
+            "name": "./node_modules/vuetify/lib/mixins/themeable.js",
+            "size": 2364,
+            "id": 28
+          },
+          {
+            "name": "./node_modules/vuetify/lib/mixins/colorable.js",
+            "size": 3223,
+            "id": 29
+          },
+          {
+            "name": "./node_modules/lodash/_root.js",
+            "size": 300,
+            "id": 31
+          },
+          {
+            "name": "./node_modules/lodash/_getNative.js",
+            "size": 483,
+            "id": 45
+          },
+          {
+            "name": "./node_modules/vuetify/lib/components/VGrid/grid.js",
+            "size": 1504,
+            "id": 50
+          },
+          {
+            "name": "./node_modules/lodash/_baseGetTag.js",
+            "size": 792,
+            "id": 62
+          },
+          {
+            "name": "./node_modules/lodash/_Symbol.js",
+            "size": 118,
+            "id": 63
+          },
+          {
+            "name": "./node_modules/lodash/isObjectLike.js",
+            "size": 614,
+            "id": 64
+          },
+          {
+            "name": "./node_modules/lodash/identity.js",
+            "size": 370,
+            "id": 65
+          },
+          {
+            "name": "./node_modules/lodash/isSymbol.js",
+            "size": 682,
+            "id": 79
+          },
+          {
+            "name": "./node_modules/lodash/_nativeCreate.js",
+            "size": 187,
+            "id": 80
+          },
+          {
+            "name": "./node_modules/lodash/isObject.js",
+            "size": 733,
+            "id": 81
+          },
+          {
+            "name": "./node_modules/lodash/_ListCache.js",
+            "size": 869,
+            "id": 82
+          },
+          {
+            "name": "./node_modules/lodash/_assocIndexOf.js",
+            "size": 487,
+            "id": 83
+          },
+          {
+            "name": "./node_modules/lodash/_getMapData.js",
+            "size": 400,
+            "id": 84
+          },
+          {
+            "name": "./node_modules/lodash/_toKey.js",
+            "size": 523,
+            "id": 85
+          },
+          {
+            "name": "./node_modules/lodash/isArrayLike.js",
+            "size": 830,
+            "id": 86
+          },
+          {
+            "name": "./node_modules/vuetify/lib/mixins/ssr-bootable.js",
+            "size": 595,
+            "id": 94
+          },
+          {
+            "name": "./node_modules/vuetify/lib/mixins/applicationable.js",
+            "size": 1919,
+            "id": 95
+          },
+          {
+            "name": "./node_modules/vuetify/lib/mixins/positionable.js",
+            "size": 892,
+            "id": 96
+          },
+          {
+            "name": "./node_modules/vuetify/src/stylus/components/_grid.styl",
+            "size": 592,
+            "id": 113
+          },
+          {
+            "name": "./node_modules/lodash/_isKey.js",
+            "size": 880,
+            "id": 114
+          },
+          {
+            "name": "./node_modules/lodash/_MapCache.js",
+            "size": 869,
+            "id": 115
+          },
+          {
+            "name": "./node_modules/lodash/eq.js",
+            "size": 799,
+            "id": 116
+          },
+          {
+            "name": "./node_modules/lodash/_Map.js",
+            "size": 195,
+            "id": 117
+          },
+          {
+            "name": "./node_modules/lodash/keys.js",
+            "size": 884,
+            "id": 119
+          },
+          {
+            "name": "./node_modules/lodash/isArguments.js",
+            "size": 1026,
+            "id": 120
+          },
+          {
+            "name": "./node_modules/lodash/_isIndex.js",
+            "size": 759,
+            "id": 121
+          },
+          {
+            "name": "./node_modules/lodash/isLength.js",
+            "size": 802,
+            "id": 122
+          },
+          {
+            "name": "./node_modules/vuetify/lib/components/VGrid/VLayout.js",
+            "size": 109,
+            "id": 126
+          },
+          {
+            "name": "./node_modules/vuetify/lib/components/VGrid/VFlex.js",
+            "size": 107,
+            "id": 127
+          },
+          {
+            "name": "./node_modules/vuetify/lib/components/VBtn/VBtn.js + 6 modules",
+            "size": 16051,
+            "id": 131
+          },
+          {
+            "name": "./node_modules/vuetify/lib/components/VToolbar/VToolbar.js + 1 modules",
+            "size": 8022,
+            "id": 132
+          },
+          {
+            "name": "./node_modules/lodash/sortBy.js",
+            "size": 1668,
+            "id": 135
+          },
+          {
+            "name": "./node_modules/lodash/get.js",
+            "size": 884,
+            "id": 162
+          },
+          {
+            "name": "./node_modules/lodash/_baseGet.js",
+            "size": 616,
+            "id": 163
+          },
+          {
+            "name": "./node_modules/lodash/_castPath.js",
+            "size": 569,
+            "id": 164
+          },
+          {
+            "name": "./node_modules/lodash/_freeGlobal.js",
+            "size": 173,
+            "id": 165
+          },
+          {
+            "name": "./node_modules/lodash/isFunction.js",
+            "size": 993,
+            "id": 166
+          },
+          {
+            "name": "./node_modules/lodash/_toSource.js",
+            "size": 556,
+            "id": 167
+          },
+          {
+            "name": "./node_modules/lodash/_arrayMap.js",
+            "size": 556,
+            "id": 168
+          },
+          {
+            "name": "./node_modules/lodash/_baseEach.js",
+            "size": 455,
+            "id": 174
+          },
+          {
+            "name": "./node_modules/lodash/isBuffer.js",
+            "size": 1114,
+            "id": 175
+          },
+          {
+            "name": "./node_modules/lodash/isTypedArray.js",
+            "size": 695,
+            "id": 177
+          },
+          {
+            "name": "./node_modules/lodash/_baseUnary.js",
+            "size": 332,
+            "id": 178
+          },
+          {
+            "name": "./node_modules/lodash/_arrayPush.js",
+            "size": 437,
+            "id": 179
+          },
+          {
+            "name": "./node_modules/lodash/_Stack.js",
+            "size": 734,
+            "id": 180
+          },
+          {
+            "name": "./node_modules/lodash/_baseIsEqual.js",
+            "size": 1019,
+            "id": 181
+          },
+          {
+            "name": "./node_modules/lodash/_equalArrays.js",
+            "size": 2595,
+            "id": 182
+          },
+          {
+            "name": "./node_modules/lodash/_isStrictComparable.js",
+            "size": 414,
+            "id": 183
+          },
+          {
+            "name": "./node_modules/lodash/_matchesStrictComparable.js",
+            "size": 574,
+            "id": 184
+          },
+          {
+            "name": "./node_modules/unfetch/dist/unfetch.mjs",
+            "size": 938,
+            "id": 186
+          },
+          {
+            "name": "./node_modules/vue-no-ssr/dist/vue-no-ssr.common.js",
+            "size": 1204,
+            "id": 188
+          },
+          {
+            "name": "./node_modules/lodash/each.js",
+            "size": 39,
+            "id": 189
+          },
+          {
+            "name": "./node_modules/vuetify/lib/directives/ripple.js",
+            "size": 7313,
+            "id": 190
+          },
+          {
+            "name": "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 3 modules",
+            "size": 996,
+            "id": 191
+          },
+          {
+            "name": "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js + 3 modules",
+            "size": 791,
+            "id": 192
+          },
+          {
+            "name": "./node_modules/css-loader/dist/cjs.js??ref--10-oneOf-1-1!./node_modules/postcss-loader/src??ref--10-oneOf-1-2!./node_modules/stylus-loader??ref--10-oneOf-1-3!./node_modules/vuetify/src/stylus/components/_grid.styl",
+            "size": 31450,
+            "id": 233
+          },
+          {
+            "name": "./node_modules/lodash/_getRawTag.js",
+            "size": 1139,
+            "id": 240
+          },
+          {
+            "name": "./node_modules/lodash/_objectToString.js",
+            "size": 565,
+            "id": 241
+          },
+          {
+            "name": "./node_modules/lodash/_stringToPath.js",
+            "size": 840,
+            "id": 242
+          },
+          {
+            "name": "./node_modules/lodash/_memoizeCapped.js",
+            "size": 633,
+            "id": 243
+          },
+          {
+            "name": "./node_modules/lodash/memoize.js",
+            "size": 2224,
+            "id": 244
+          },
+          {
+            "name": "./node_modules/lodash/_mapCacheClear.js",
+            "size": 393,
+            "id": 245
+          },
+          {
+            "name": "./node_modules/lodash/_Hash.js",
+            "size": 747,
+            "id": 246
+          },
+          {
+            "name": "./node_modules/lodash/_hashClear.js",
+            "size": 281,
+            "id": 247
+          },
+          {
+            "name": "./node_modules/lodash/_baseIsNative.js",
+            "size": 1417,
+            "id": 248
+          },
+          {
+            "name": "./node_modules/lodash/_isMasked.js",
+            "size": 564,
+            "id": 249
+          },
+          {
+            "name": "./node_modules/lodash/_coreJsData.js",
+            "size": 157,
+            "id": 250
+          },
+          {
+            "name": "./node_modules/lodash/_getValue.js",
+            "size": 325,
+            "id": 251
+          },
+          {
+            "name": "./node_modules/lodash/_hashDelete.js",
+            "size": 445,
+            "id": 252
+          },
+          {
+            "name": "./node_modules/lodash/_hashGet.js",
+            "size": 772,
+            "id": 253
+          },
+          {
+            "name": "./node_modules/lodash/_hashHas.js",
+            "size": 626,
+            "id": 254
+          },
+          {
+            "name": "./node_modules/lodash/_hashSet.js",
+            "size": 598,
+            "id": 255
+          },
+          {
+            "name": "./node_modules/lodash/_listCacheClear.js",
+            "size": 218,
+            "id": 256
+          },
+          {
+            "name": "./node_modules/lodash/_listCacheDelete.js",
+            "size": 775,
+            "id": 257
+          },
+          {
+            "name": "./node_modules/lodash/_listCacheGet.js",
+            "size": 420,
+            "id": 258
+          },
+          {
+            "name": "./node_modules/lodash/_listCacheHas.js",
+            "size": 403,
+            "id": 259
+          },
+          {
+            "name": "./node_modules/lodash/_listCacheSet.js",
+            "size": 553,
+            "id": 260
+          },
+          {
+            "name": "./node_modules/lodash/_mapCacheDelete.js",
+            "size": 450,
+            "id": 261
+          },
+          {
+            "name": "./node_modules/lodash/_isKeyable.js",
+            "size": 430,
+            "id": 262
+          },
+          {
+            "name": "./node_modules/lodash/_mapCacheGet.js",
+            "size": 330,
+            "id": 263
+          },
+          {
+            "name": "./node_modules/lodash/_mapCacheHas.js",
+            "size": 382,
+            "id": 264
+          },
+          {
+            "name": "./node_modules/lodash/_mapCacheSet.js",
+            "size": 489,
+            "id": 265
+          },
+          {
+            "name": "./node_modules/lodash/toString.js",
+            "size": 580,
+            "id": 266
+          },
+          {
+            "name": "./node_modules/lodash/_baseToString.js",
+            "size": 1154,
+            "id": 267
+          },
+          {
+            "name": "./node_modules/lodash/forEach.js",
+            "size": 1355,
+            "id": 286
+          },
+          {
+            "name": "./node_modules/lodash/_arrayEach.js",
+            "size": 537,
+            "id": 287
+          },
+          {
+            "name": "./node_modules/lodash/_baseForOwn.js",
+            "size": 456,
+            "id": 288
+          },
+          {
+            "name": "./node_modules/lodash/_baseFor.js",
+            "size": 593,
+            "id": 289
+          },
+          {
+            "name": "./node_modules/lodash/_createBaseFor.js",
+            "size": 648,
+            "id": 290
+          },
+          {
+            "name": "./node_modules/lodash/_arrayLikeKeys.js",
+            "size": 1778,
+            "id": 291
+          },
+          {
+            "name": "./node_modules/lodash/_baseTimes.js",
+            "size": 504,
+            "id": 292
+          },
+          {
+            "name": "./node_modules/lodash/_baseIsArguments.js",
+            "size": 488,
+            "id": 293
+          },
+          {
+            "name": "./node_modules/lodash/stubFalse.js",
+            "size": 280,
+            "id": 294
+          },
+          {
+            "name": "./node_modules/lodash/_baseIsTypedArray.js",
+            "size": 2222,
+            "id": 295
+          },
+          {
+            "name": "./node_modules/lodash/_nodeUtil.js",
+            "size": 995,
+            "id": 296
+          },
+          {
+            "name": "./node_modules/lodash/_baseKeys.js",
+            "size": 776,
+            "id": 297
+          },
+          {
+            "name": "./node_modules/lodash/_isPrototype.js",
+            "size": 480,
+            "id": 298
+          },
+          {
+            "name": "./node_modules/lodash/_nativeKeys.js",
+            "size": 204,
+            "id": 299
+          },
+          {
+            "name": "./node_modules/lodash/_overArg.js",
+            "size": 382,
+            "id": 300
+          },
+          {
+            "name": "./node_modules/lodash/_createBaseEach.js",
+            "size": 886,
+            "id": 301
+          },
+          {
+            "name": "./node_modules/lodash/_castFunction.js",
+            "size": 326,
+            "id": 302
+          },
+          {
+            "name": "./node_modules/vuetify/src/stylus/components/_content.styl",
+            "size": 595,
+            "id": 305
+          },
+          {
+            "name": "./node_modules/css-loader/dist/cjs.js??ref--10-oneOf-1-1!./node_modules/postcss-loader/src??ref--10-oneOf-1-2!./node_modules/stylus-loader??ref--10-oneOf-1-3!./node_modules/vuetify/src/stylus/components/_content.styl",
+            "size": 760,
+            "id": 306
+          },
+          {
+            "name": "./node_modules/lodash/_baseFlatten.js",
+            "size": 1201,
+            "id": 307
+          },
+          {
+            "name": "./node_modules/lodash/_isFlattenable.js",
+            "size": 608,
+            "id": 308
+          },
+          {
+            "name": "./node_modules/lodash/_baseOrderBy.js",
+            "size": 1196,
+            "id": 309
+          },
+          {
+            "name": "./node_modules/lodash/_baseIteratee.js",
+            "size": 895,
+            "id": 310
+          },
+          {
+            "name": "./node_modules/lodash/_baseMatches.js",
+            "size": 710,
+            "id": 311
+          },
+          {
+            "name": "./node_modules/lodash/_baseIsMatch.js",
+            "size": 1765,
+            "id": 312
+          },
+          {
+            "name": "./node_modules/lodash/_stackClear.js",
+            "size": 254,
+            "id": 313
+          },
+          {
+            "name": "./node_modules/lodash/_stackDelete.js",
+            "size": 405,
+            "id": 314
+          },
+          {
+            "name": "./node_modules/lodash/_stackGet.js",
+            "size": 271,
+            "id": 315
+          },
+          {
+            "name": "./node_modules/lodash/_stackHas.js",
+            "size": 323,
+            "id": 316
+          },
+          {
+            "name": "./node_modules/lodash/_stackSet.js",
+            "size": 853,
+            "id": 317
+          },
+          {
+            "name": "./node_modules/lodash/_baseIsEqualDeep.js",
+            "size": 3010,
+            "id": 318
+          },
+          {
+            "name": "./node_modules/lodash/_SetCache.js",
+            "size": 632,
+            "id": 319
+          },
+          {
+            "name": "./node_modules/lodash/_setCacheAdd.js",
+            "size": 424,
+            "id": 320
+          },
+          {
+            "name": "./node_modules/lodash/_setCacheHas.js",
+            "size": 316,
+            "id": 321
+          },
+          {
+            "name": "./node_modules/lodash/_arraySome.js",
+            "size": 594,
+            "id": 322
+          },
+          {
+            "name": "./node_modules/lodash/_cacheHas.js",
+            "size": 337,
+            "id": 323
+          },
+          {
+            "name": "./node_modules/lodash/_equalByTag.js",
+            "size": 3746,
+            "id": 324
+          },
+          {
+            "name": "./node_modules/lodash/_Uint8Array.js",
+            "size": 130,
+            "id": 325
+          },
+          {
+            "name": "./node_modules/lodash/_mapToArray.js",
+            "size": 363,
+            "id": 326
+          },
+          {
+            "name": "./node_modules/lodash/_setToArray.js",
+            "size": 345,
+            "id": 327
+          },
+          {
+            "name": "./node_modules/lodash/_equalObjects.js",
+            "size": 2903,
+            "id": 328
+          },
+          {
+            "name": "./node_modules/lodash/_getAllKeys.js",
+            "size": 455,
+            "id": 329
+          },
+          {
+            "name": "./node_modules/lodash/_baseGetAllKeys.js",
+            "size": 739,
+            "id": 330
+          },
+          {
+            "name": "./node_modules/lodash/_getSymbols.js",
+            "size": 886,
+            "id": 331
+          },
+          {
+            "name": "./node_modules/lodash/_arrayFilter.js",
+            "size": 632,
+            "id": 332
+          },
+          {
+            "name": "./node_modules/lodash/stubArray.js",
+            "size": 390,
+            "id": 333
+          },
+          {
+            "name": "./node_modules/lodash/_getTag.js",
+            "size": 1838,
+            "id": 334
+          },
+          {
+            "name": "./node_modules/lodash/_DataView.js",
+            "size": 210,
+            "id": 335
+          },
+          {
+            "name": "./node_modules/lodash/_Promise.js",
+            "size": 207,
+            "id": 336
+          },
+          {
+            "name": "./node_modules/lodash/_Set.js",
+            "size": 195,
+            "id": 337
+          },
+          {
+            "name": "./node_modules/lodash/_WeakMap.js",
+            "size": 207,
+            "id": 338
+          },
+          {
+            "name": "./node_modules/lodash/_getMatchData.js",
+            "size": 573,
+            "id": 339
+          },
+          {
+            "name": "./node_modules/lodash/_baseMatchesProperty.js",
+            "size": 1129,
+            "id": 340
+          },
+          {
+            "name": "./node_modules/lodash/hasIn.js",
+            "size": 753,
+            "id": 341
+          },
+          {
+            "name": "./node_modules/lodash/_baseHasIn.js",
+            "size": 374,
+            "id": 342
+          },
+          {
+            "name": "./node_modules/lodash/_hasPath.js",
+            "size": 1085,
+            "id": 343
+          },
+          {
+            "name": "./node_modules/lodash/property.js",
+            "size": 793,
+            "id": 344
+          },
+          {
+            "name": "./node_modules/lodash/_baseProperty.js",
+            "size": 360,
+            "id": 345
+          },
+          {
+            "name": "./node_modules/lodash/_basePropertyDeep.js",
+            "size": 391,
+            "id": 346
+          },
+          {
+            "name": "./node_modules/lodash/_baseMap.js",
+            "size": 668,
+            "id": 347
+          },
+          {
+            "name": "./node_modules/lodash/_baseSortBy.js",
+            "size": 543,
+            "id": 348
+          },
+          {
+            "name": "./node_modules/lodash/_compareMultiple.js",
+            "size": 1599,
+            "id": 349
+          },
+          {
+            "name": "./node_modules/lodash/_compareAscending.js",
+            "size": 1343,
+            "id": 350
+          },
+          {
+            "name": "./node_modules/lodash/_baseRest.js",
+            "size": 559,
+            "id": 351
+          },
+          {
+            "name": "./node_modules/lodash/_overRest.js",
+            "size": 1096,
+            "id": 352
+          },
+          {
+            "name": "./node_modules/lodash/_apply.js",
+            "size": 714,
+            "id": 353
+          },
+          {
+            "name": "./node_modules/lodash/_setToString.js",
+            "size": 392,
+            "id": 354
+          },
+          {
+            "name": "./node_modules/lodash/_baseSetToString.js",
+            "size": 641,
+            "id": 355
+          },
+          {
+            "name": "./node_modules/lodash/constant.js",
+            "size": 528,
+            "id": 356
+          },
+          {
+            "name": "./node_modules/lodash/_defineProperty.js",
+            "size": 233,
+            "id": 357
+          },
+          {
+            "name": "./node_modules/lodash/_shortOut.js",
+            "size": 941,
+            "id": 358
+          },
+          {
+            "name": "./node_modules/lodash/_isIterateeCall.js",
+            "size": 877,
+            "id": 359
+          },
+          {
+            "name": "./node_modules/vuetify/src/stylus/components/_app.styl",
+            "size": 591,
+            "id": 364
+          },
+          {
+            "name": "./node_modules/css-loader/dist/cjs.js??ref--10-oneOf-1-1!./node_modules/postcss-loader/src??ref--10-oneOf-1-2!./node_modules/stylus-loader??ref--10-oneOf-1-3!./node_modules/vuetify/src/stylus/components/_app.styl",
+            "size": 1593,
+            "id": 365
+          },
+          {
+            "name": "./node_modules/vuetify/src/stylus/components/_footer.styl",
+            "size": 594,
+            "id": 368
+          },
+          {
+            "name": "./node_modules/css-loader/dist/cjs.js??ref--10-oneOf-1-1!./node_modules/postcss-loader/src??ref--10-oneOf-1-2!./node_modules/stylus-loader??ref--10-oneOf-1-3!./node_modules/vuetify/src/stylus/components/_footer.styl",
+            "size": 933,
+            "id": 369
+          },
+          {
+            "name": "./node_modules/vuetify/src/stylus/components/_toolbar.styl",
+            "size": 595,
+            "id": 370
+          },
+          {
+            "name": "./node_modules/css-loader/dist/cjs.js??ref--10-oneOf-1-1!./node_modules/postcss-loader/src??ref--10-oneOf-1-2!./node_modules/stylus-loader??ref--10-oneOf-1-3!./node_modules/vuetify/src/stylus/components/_toolbar.styl",
+            "size": 6173,
+            "id": 371
+          },
+          {
+            "name": "./node_modules/vuetify/src/stylus/components/_buttons.styl",
+            "size": 595,
+            "id": 373
+          },
+          {
+            "name": "./node_modules/css-loader/dist/cjs.js??ref--10-oneOf-1-1!./node_modules/postcss-loader/src??ref--10-oneOf-1-2!./node_modules/stylus-loader??ref--10-oneOf-1-3!./node_modules/vuetify/src/stylus/components/_buttons.styl",
+            "size": 11125,
+            "id": 374
+          },
+          {
+            "name": "./node_modules/vuetify/src/stylus/components/_progress-circular.styl",
+            "size": 605,
+            "id": 375
+          },
+          {
+            "name": "./node_modules/css-loader/dist/cjs.js??ref--10-oneOf-1-1!./node_modules/postcss-loader/src??ref--10-oneOf-1-2!./node_modules/stylus-loader??ref--10-oneOf-1-3!./node_modules/vuetify/src/stylus/components/_progress-circular.styl",
+            "size": 2366,
+            "id": 376
+          },
+          {
+            "name": "./node_modules/vuetify/src/stylus/components/_icons.styl",
+            "size": 593,
+            "id": 381
+          },
+          {
+            "name": "./node_modules/css-loader/dist/cjs.js??ref--10-oneOf-1-1!./node_modules/postcss-loader/src??ref--10-oneOf-1-2!./node_modules/stylus-loader??ref--10-oneOf-1-3!./node_modules/vuetify/src/stylus/components/_icons.styl",
+            "size": 1227,
+            "id": 382
+          },
+          {
+            "name": "./node_modules/vuetify/src/stylus/components/_images.styl",
+            "size": 594,
+            "id": 386
+          },
+          {
+            "name": "./node_modules/css-loader/dist/cjs.js??ref--10-oneOf-1-1!./node_modules/postcss-loader/src??ref--10-oneOf-1-2!./node_modules/stylus-loader??ref--10-oneOf-1-3!./node_modules/vuetify/src/stylus/components/_images.styl",
+            "size": 568,
+            "id": 387
+          },
+          {
+            "name": "./node_modules/vuetify/src/stylus/components/_responsive.styl",
+            "size": 598,
+            "id": 388
+          },
+          {
+            "name": "./node_modules/css-loader/dist/cjs.js??ref--10-oneOf-1-1!./node_modules/postcss-loader/src??ref--10-oneOf-1-2!./node_modules/stylus-loader??ref--10-oneOf-1-3!./node_modules/vuetify/src/stylus/components/_responsive.styl",
+            "size": 697,
+            "id": 389
+          },
+          {
+            "name": "./node_modules/vuetify/lib/components/VFooter/VFooter.js",
+            "size": 2638,
+            "id": 390
+          },
+          {
+            "name": "./node_modules/vuetify/lib/components/VApp/VApp.js + 6 modules",
+            "size": 14404,
+            "id": 391
+          },
+          {
+            "name": "./node_modules/vuetify/lib/components/VToolbar/index.js + 5 modules",
+            "size": 6377,
+            "id": 392
+          },
+          {
+            "name": "./node_modules/vuetify/lib/components/VImg/VImg.js + 3 modules",
+            "size": 8118,
+            "id": 393
+          },
+          {
+            "name": "./node_modules/vuetify/lib/components/VGrid/index.js + 2 modules",
+            "size": 1817,
+            "id": 394
+          },
+          {
+            "name": "./node_modules/vuetify/lib/components/transitions/index.js + 1 modules",
+            "size": 5664,
+            "id": 395
+          }
+        ]
+      }
+    ]
   }
 ]

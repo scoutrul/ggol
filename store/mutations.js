@@ -29,5 +29,8 @@ export default {
   },
   STORE_LEAGUE_TABLE: (state, { leagueId, table }) => {
     state.leagueTables[leagueId] = table
+  },
+  STORE_COUNTRIES: (state, countries) => {
+    state.countries = countries
   }
 }
