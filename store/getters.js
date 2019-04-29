@@ -1,3 +1,6 @@
 export default {
-  TESTS: state => state.tests
+  GET_LEAGUES_BY_ID: state => id =>{
+    return id
+  }
+
 }

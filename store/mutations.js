@@ -35,6 +35,5 @@ export default {
   },
   STORE_LEAGUES: (state, leagues) => {
     state.leagues = [...state.leagues, leagues]
-    // перебор объекта в ключи {id: {...}}
   }
 }

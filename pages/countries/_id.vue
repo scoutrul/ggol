@@ -13,6 +13,7 @@ export default {
         .get('http://livescore-api.com/api-client/leagues/list.json')
         .then(res => res.data.data.league);
       store.commit('STORE_LEAGUES', leagues);
+      console.log(store.getters.GET_LEAGUES_BY_ID(444))
       return {
         leagues,
         country_id: params.id
@@ -25,7 +26,6 @@ export default {
         country_id: 'none'
       }
     }
-
   }
 }
 
