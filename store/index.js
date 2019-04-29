@@ -9,7 +9,7 @@ const createStore = () => {
     state: () => ({
       teams: {},
       teamsCount: 0,
-      leagues: {},
+      leagues: [],
       leaguesCount: 0,
       fixtures: {},
       liveFixtures: {},

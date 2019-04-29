@@ -22,7 +22,8 @@ module.exports = {
   plugins: [
     '~plugins/vuetify',
     '~plugins/core-components',
-    '~plugins/api'],
+    '~plugins/api',
+    '~plugins/axios-defaults'],
 
   modules: [
     '@nuxtjs/style-resources',

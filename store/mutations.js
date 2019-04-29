@@ -17,10 +17,10 @@ export default {
   STORE_LEAGUE: (state, { leagueId, league }) => {
     state.leagues[leagueId] = league
   },
-  STORE_LEAGUES: (state, { leagues, results }) => {
-    state.leagues = leagues
-    state.leaguesCount = results
-  },
+  // STORE_LEAGUES: (state, { leagues, results }) => {
+  //   state.leagues = leagues
+  //   state.leaguesCount = results
+  // },
   STORE_EVENTS: (state, { fixtureId, events }) => {
     state.events[fixtureId] = [...events]
   },
@@ -32,5 +32,9 @@ export default {
   },
   STORE_COUNTRIES: (state, countries) => {
     state.countries = countries
+  },
+  STORE_LEAGUES: (state, leagues) => {
+    state.leagues = [...state.leagues, leagues]
+    // перебор объекта в ключи {id: {...}}
   }
 }
