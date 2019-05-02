@@ -4,8 +4,6 @@ const pkg = require('./package')
 // eslint-disable-next-line nuxt/no-cjs-in-config
 module.exports = {
   mode: 'universal',
-  dev: true,
-  devtools: true,
   head: {
     title: pkg.name,
     meta: [
@@ -16,20 +14,21 @@ module.exports = {
   },
   loading: { color: '#f5f' },
   css: [
-
+  
   ],
-
+  
   plugins: [
     '~plugins/vuetify',
     '~plugins/core-components',
     '~plugins/api',
     '~plugins/axios-defaults'],
-
+  
   modules: [
     '@nuxtjs/style-resources',
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@nuxtjs/webpackmonitor'
+    '@nuxtjs/webpackmonitor',
+    '@nuxtjs/dotenv'
   ],
   styleResources: {
     stylus: [
@@ -41,7 +40,7 @@ module.exports = {
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
-
+  
   build: {
     vendor: ['axios'],
     analyze: true,
@@ -93,10 +92,4 @@ module.exports = {
     name: 'fade',
     mode: 'out-in',
   },
-  vue: {
-    config: {
-      productionTip: false,
-      devtools: true
-    }
-  }
 }

@@ -1,6 +1,6 @@
 # ggol
 
-> My good Nuxt.js project
+> the soccer site
 
 ## Build Setup
 

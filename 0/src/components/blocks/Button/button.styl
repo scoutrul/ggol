@@ -1,0 +1,32 @@
+@import '../../../assets/styles/vars/index.styl';
+
+.button__yellow
+	border-color: $yellow
+	background-color $yellow
+	margin 0
+	width 100%
+	flex: 1 1 120px;
+	max-width 240px
+	height 48px
+	bottom 0;
+	cursor pointer
+	border 0
+	@media (max-width $cta_button_brake)
+		display none
+	.v-btn__content
+		color $Black_Text
+		text-transform: none
+		font-weight: bold;
+		font-size 16px
+		&:hover
+			color $Lighter_Text
+
+.button__fix
+	display none
+	bottom 0
+	position: fixed !important
+	left: 50%;
+	transform: translateX(-50%);
+	@media (max-width $cta_button_brake)
+		bottom: 40px;
+		display flex

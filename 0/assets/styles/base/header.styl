@@ -1,0 +1,19 @@
+@require '../vars/index.styl';
+
+.header
+	display flex
+	flex 0 0 auto
+	width 100%
+	top 0
+	z-index 10
+	align-items: center;
+	transition height $transition_header
+	height: 128px;
+	left: 0
+
+	&__container
+		height: 100%
+		align-items: center;
+		margin: 0 auto;
+		flex-flow row nowrap !important
+		background-color #FFF

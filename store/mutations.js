@@ -17,10 +17,6 @@ export default {
   STORE_LEAGUE: (state, { leagueId, league }) => {
     state.leagues[leagueId] = league
   },
-  // STORE_LEAGUES: (state, { leagues, results }) => {
-  //   state.leagues = leagues
-  //   state.leaguesCount = results
-  // },
   STORE_EVENTS: (state, { fixtureId, events }) => {
     state.events[fixtureId] = [...events]
   },

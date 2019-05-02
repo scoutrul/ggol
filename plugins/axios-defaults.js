@@ -4,7 +4,7 @@ export default function ({ $axios, store }) {
     const separator = hasQuery ? '&' : '?'
 
     config.url = config.url + separator + 'lang=' + store.state.locale
-    console.log(config)
+
     return config
   })
 }

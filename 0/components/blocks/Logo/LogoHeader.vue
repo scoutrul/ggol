@@ -27,11 +27,7 @@
 </template>
 
 <script>
-import { $viewport } from '../../../mixins'
 
-export default {
-  mixins: [$viewport]
-}
 </script>
 <style lang="stylus">
 @import './logo.styl';
