@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",
+    "@vue/devtools": "^5.1.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.15.1",
     "eslint-config-prettier": "^4.1.0",
@@ -46,8 +47,8 @@
     "prettier": "^1.16.4",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
+    "style-loader": "^0.23.1",
     "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2",
-    "style-loader": "^0.23.1"
+    "stylus-loader": "^3.0.2"
   }
 }

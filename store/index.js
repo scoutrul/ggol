@@ -18,7 +18,8 @@ const createStore = () => {
       events: {},
       statistics: {},
       leagueTables: {},
-      countries: []
+      countries: [],
+      locale: 'ru'
     }),
   getters,
   mutations,

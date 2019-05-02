@@ -3,7 +3,7 @@ export default function ({ $axios, store }) {
     const hasQuery = config.url.indexOf('?') > -1
     const separator = hasQuery ? '&' : '?'
 
-    config.url = config.url + separator + 'locale=' + store.state.locale
+    config.url = config.url + separator + 'lang=' + store.state.locale
     console.log(config)
     return config
   })
