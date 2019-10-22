@@ -1,95 +1,87 @@
-const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
-const pkg = require('./package')
+const colors = require('vuetify/es5/util/colors').default
 
-// eslint-disable-next-line nuxt/no-cjs-in-config
 module.exports = {
   mode: 'universal',
+  /*
+  ** Headers of the page
+  */
   head: {
-    title: pkg.name,
+    titleTemplate: '%s - ' + process.env.npm_package_name,
+    title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ]
   },
-  loading: { color: '#f5f' },
+  /*
+  ** Customize the progress-bar color
+  */
+  loading: { color: '#fff' },
+  /*
+  ** Global CSS
+  */
   css: [
-  
   ],
-  
+  /*
+  ** Plugins to load before mounting the App
+  */
   plugins: [
-    '~plugins/vuetify',
-    '~plugins/core-components',
-    '~plugins/api',
-    '~plugins/axios-defaults'],
-  
+  ],
+  /*
+  ** Nuxt.js dev-modules
+  */
+  buildModules: [
+    // Doc: https://github.com/nuxt-community/eslint-module
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/vuetify',
+  ],
+  /*
+  ** Nuxt.js modules
+  */
   modules: [
-    '@nuxtjs/style-resources',
+    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@nuxtjs/webpackmonitor',
-    '@nuxtjs/dotenv'
   ],
-  styleResources: {
-    stylus: [
-      '~node_modules/vuetify/src/stylus/settings/_variables',
-      '~node_modules/vuetify/src/stylus/generic/_transitions',
-      '~assets/styles/base/fonts',
-      '~assets/styles/base/normalize',]
-  },
+  /*
+  ** Axios module configuration
+  ** See https://axios.nuxtjs.org/options
+  */
   axios: {
-    // See https://github.com/nuxt-community/axios-module#options
   },
-  
-  build: {
-    vendor: ['axios'],
-    analyze: true,
-    transpile: ['vuetify/lib'],
-    plugins: [new VuetifyLoaderPlugin()],
-    loaders: {
-      stylus: {}
-    },
-    postcss: {
-      plugins: {
-        'postcss-preset-env': {
-          features: {
-            customProperties: false
-          }
+  /*
+  ** vuetify module configuration
+  ** https://github.com/nuxt-community/vuetify-module
+  */
+  vuetify: {
+    customVariables: ['~/assets/variables.scss'],
+    theme: {
+      dark: true,
+      themes: {
+        dark: {
+          primary: colors.blue.darken2,
+          accent: colors.grey.darken3,
+          secondary: colors.amber.darken3,
+          info: colors.teal.lighten1,
+          warning: colors.amber.base,
+          error: colors.deepOrange.accent4,
+          success: colors.green.accent3
         }
-      }
-    },
-    /*
-     ** You can extend webpack config here
-     */
-    extend(config, ctx) {
-      // Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: ['vue-loader', 'style-loader', 'css-loader', 'stylus-loader'],
-          exclude: /(node_modules)/
-        })
-        config.module.rules.push({
-          test: /\.styl$/,
-          loader: ['style-loader', 'css-loader', 'stylus-loader'],
-          exclude: /(node_modules)/
-        })
-        config.module.rules.push({
-          test: /\.css$/,
-          loader: ['style-loader', 'css-loader', 'vue-style-loader'],
-          exclude: /(node_modules)/
-        })
-        config.module.rules.push({
-          test: /\.pug$/,
-          loader: ['pug-plain-loader'],
-          exclude: /(node_modules)/
-        })
       }
     }
   },
-  transition: {
-    name: 'fade',
-    mode: 'out-in',
-  },
+  /*
+  ** Build configuration
+  */
+  build: {
+    /*
+    ** You can extend webpack config here
+    */
+    extend (config, ctx) {
+    }
+  }
 }
