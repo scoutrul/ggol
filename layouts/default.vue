@@ -7,55 +7,46 @@
             v-icon {{ item.icon }}
           v-list-item-content
             v-list-item-title(v-text='item.title').
-    v-app-bar(:clipped-left='clipped' fixed app)
-      v-app-bar-nav-icon(@click.stop='drawer = !drawer')
-        v-btn(icon @click.stop='miniVariant = !miniVariant')
-          v-icon mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}
-        v-btn(icon @click.stop='clipped = !clipped')
-          v-icon mdi-application
-        v-btn(icon @click.stop='fixed = !fixed')
-          v-icon mdi-minus
-        v-toolbar-title(v-text='title')
-          v-spacer
-            v-btn(icon @click.stop='rightDrawer = !rightDrawer')
-              v-icon mdi-menu
-    v-content
+    v-content.flex.align-center
       v-container
         nuxt
-    v-navigation-drawer(v-model='rightDrawer' :right='right' temporary fixed)
-      v-list
-        v-list-item(@click.native='right = !right')
-          v-list-item-action
-            v-icon(light).
-              mdi-repeat
-          v-list-item-title Switch drawer (click me)
-    v-footer(:fixed='fixed' app)
-      span © 2019
+    v-container
+      v-footer(app dark padless)
+        v-flex.xs6
+          v-btn.my-2(v-for='link in links' :key='link' color='grey' text rounded) {{ link }}
+        v-flex.xs4.text-right.pa-4
+          v-btn(icon)
+            v-icon mdi-magnify
+          v-btn(icon)
+            v-icon mdi-heart
+        v-flex.xs2.text-right.pa-4
+          |{{ new Date().getFullYear() }} — Ggol
 </template>
 
 <script>
 export default {
   data() {
     return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
+      drawer: true,
+      miniVariant: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
+          title: 'Профиль',
+          to: '/profile',
+          icon: 'mdi-account'
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
+          title: 'История',
+          to: '/history',
+          icon: 'mdi-history'
+        },
+        {
+          title: 'Задонатить',
+          to: '/donate',
+          icon: 'mdi-gift'
         }
       ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js'
+      links: ['@', 'About', 'Donate']
     }
   }
 }
