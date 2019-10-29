@@ -45,8 +45,60 @@ module.exports = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    [
+      'nuxt-fire',
+      {
+        // Required:
+        config: {
+          development: {
+            apiKey: 'AIzaSyA1KfnAWNp2hSu-fGXpDrOdX6jap4ICLiU',
+            authDomain: 'migg-63592.firebaseapp.com',
+            databaseURL: 'https://migg-63592.firebaseio.com',
+            projectId: 'migg-63592',
+            storageBucket: 'migg-63592.appspot.com',
+            messagingSenderId: '32087990833',
+            appId: '1:32087990833:web:c571e8790b53f035',
+            measurementId: 'G-KEZBCF0V5W'
+          },
+          production: {
+            apiKey: 'AIzaSyA1KfnAWNp2hSu-fGXpDrOdX6jap4ICLiU',
+            authDomain: 'migg-63592.firebaseapp.com',
+            databaseURL: 'https://migg-63592.firebaseio.com',
+            projectId: 'migg-63592',
+            storageBucket: 'migg-63592.appspot.com',
+            messagingSenderId: '32087990833',
+            appId: '1:32087990833:web:c571e8790b53f035',
+            measurementId: 'G-KEZBCF0V5W'
+          }
+        },
+        // The following options are optional:
+        useOnly: [
+          'auth',
+          'firestore',
+          'functions',
+          'storage',
+          'realtimeDb',
+          'messaging',
+          'performance',
+          'analytics',
+          'remoteConfig'
+        ],
+        customEnv: false,
+        functionsLocation: 'us-central1',
+        remoteConfig: {
+          settings: {
+            fetchTimeoutMillis: 60000,
+            minimumFetchIntervalMillis: 43200000
+          },
+          defaultConfig: {
+            welcome_message: 'Welcome'
+          }
+        }
+      }
+    ]
   ],
+
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options

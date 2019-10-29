@@ -16,6 +16,26 @@ export default {
   components: {
     Logo,
     VuetifyLogo
+  },
+  data() {
+    return {
+      tourneys: []
+    }
+  },
+
+  created() {
+    this.readFromFirestore()
+  },
+  methods: {
+    async readFromFirestore() {
+      const messageRef = this.$fireStore.collection('tourneys').doc('1')
+      try {
+        const messageDoc = await messageRef.get()
+        console.log(messageDoc.data().name)
+      } catch (e) {
+        console.log(e)
+      }
+    }
   }
 }
 </script>

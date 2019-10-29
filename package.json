@@ -24,7 +24,9 @@
     "@nuxtjs/pwa": "^3.0.0-0",
     "cross-env": "^5.2.0",
     "fastify": "^1.13.3",
-    "nuxt": "^2.0.0"
+    "firebase": "^7.2.2",
+    "nuxt": "^2.0.0",
+    "nuxt-fire": "^2.3.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",
