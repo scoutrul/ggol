@@ -25,6 +25,10 @@ export const actions = {
       alert(e)
     }
   },
+  async authUserIn({ commit }, { email }) {
+    await commit('SET_LOGGED_IN', !!email)
+    await commit('SET_USER', { email })
+  },
   async signUserOut({ commit }) {
     await this.$fireAuth.signOut().then(() => {
       commit('SET_USER', null)
