@@ -23,18 +23,27 @@ export default {
     }
   },
 
-  created() {
-    this.readFromFirestore()
+  mounted() {
+    // this.$fireAuth.signOut()
+    // this.onAuthStateChanged()
+    this.signInUser()
   },
   methods: {
-    async readFromFirestore() {
-      const messageRef = this.$fireStore.collection('tourneys').doc('1')
-      try {
-        const messageDoc = await messageRef.get()
-        console.log(messageDoc.data().name)
-      } catch (e) {
-        console.log(e)
-      }
+    signInUser() {
+      this.$store.dispatch('signUserIn', {
+        login: 'antongolova@gmail.com',
+        password: ''
+      })
+    }
+  },
+  computed: {
+    user() {
+      return this.$store.getters.user
+    }
+  },
+  watch: {
+    user(val) {
+      console.log(val)
     }
   }
 }
