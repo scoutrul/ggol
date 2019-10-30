@@ -1,49 +1,68 @@
 <template lang="pug">
   v-layout(column justify-center align-center)
     v-flex(xs12 sm8 md6)
-      v-card
-        v-card-title.headline Play your tourney!
+      v-card(v-if="!loggedIn")
+        v-card-title.headline Login
         v-card-text
-          p StarCraft
-          p BroodWar
+          v-text-field(v-model="login" :rules="rulesLogin" placeholder="login(email)" :loading="!loggedIn")
+          v-text-field(v-model="password" :rules="rulesPassword" placeholder="password" :loading="!loggedIn")
+          v-btn(@click.prevent="signUserIn") SignIn
+      v-card(v-else)
+        v-card-title.headline Velkomen!
+        v-card-text
+          v-btn(@click.prevent="signUserOut") SignOut
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
 export default {
-  components: {
-    Logo,
-    VuetifyLogo
-  },
+  components: {},
   data() {
     return {
-      tourneys: []
+      login: 'test@test.tt',
+      password: 'testest',
+      tourneys: [],
+      rulesLogin: [
+        (value) => !!value || 'Required.',
+        (value) => {
+          const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+          return pattern.test(value) || 'Invalid e-mail.'
+        }
+      ],
+      rulesPassword: [(value) => !!value || 'Required.']
     }
   },
 
-  mounted() {
-    // this.$fireAuth.signOut()
-    // this.onAuthStateChanged()
-    this.signInUser()
+  async nuxtServerInit({ commit, app }) {
+    const user = await app.$fireAuth.currentUser
+    console.log(user)
+    commit('SET_USER', {
+      displayName: user.displayName,
+      email: user.email
+    })
   },
-  methods: {
-    signInUser() {
-      this.$store.dispatch('signUserIn', {
-        login: 'antongolova@gmail.com',
-        password: ''
-      })
-    }
+  mounted() {
+    this.$fireAuth.onAuthStateChanged((user) => {
+      if (user) {
+        console.log('user is out')
+      } else {
+        console.log('user in')
+      }
+    })
   },
   computed: {
-    user() {
-      return this.$store.getters.user
+    loggedIn() {
+      return this.$store.getters.loggedIn
     }
   },
-  watch: {
-    user(val) {
-      console.log(val)
+  methods: {
+    async signUserIn() {
+      await this.$store.dispatch('signUserIn', {
+        login: this.login,
+        password: this.password
+      })
+    },
+    async signUserOut() {
+      await this.$store.dispatch('signUserOut')
     }
   }
 }

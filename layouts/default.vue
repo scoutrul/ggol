@@ -1,6 +1,6 @@
 <template lang="pug">
   v-app(dark)
-    v-navigation-drawer(v-model='drawer' :mini-variant='miniVariant' clipped fixed app)
+    v-navigation-drawer(v-model='drawer' :mini-variant='miniVariant' clipped fixed app v-if="this.$store.getters.loggedIn")
       v-list
         v-list-item(v-for='(item, i) in items' :key='i' :to='item.to' router exact)
           v-list-item-action

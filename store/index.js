@@ -1,50 +1,46 @@
-export default {
-  state: {
-    user: {
-      loggedIn: false,
-      data: null
-    }
+export const state = () => ({
+  user: {
+    loggedIn: false,
+    data: null
+  }
+})
+
+export const actions = {
+  async signUserIn({ commit }, { login, password }) {
+    await this.$fireAuth
+      .signInWithEmailAndPassword(login, password)
+      .then((data) => {
+        if (data) {
+          commit('SET_LOGGED_IN', !!data)
+          commit('SET_USER', {
+            email: data.user.email
+          })
+        } else {
+          commit('SET_LOGGED_IN', false)
+          commit('SET_USER', null)
+        }
+      })
   },
-  getters: {
-    user(state) {
-      return state.user
-    }
+  async signUserOut({ commit }) {
+    await this.$fireAuth.signOut().then(() => {
+      commit('SET_USER', null)
+      commit('SET_LOGGED_IN', false)
+    })
+  }
+}
+export const mutations = {
+  SET_LOGGED_IN(state, value) {
+    state.user.loggedIn = value
   },
-  mutations: {
-    SET_LOGGED_IN(state, value) {
-      state.user.loggedIn = value
-    },
-    SET_USER(state, data) {
-      state.user.data = data
-    }
+  SET_USER(state, data) {
+    state.user.data = data
+  }
+}
+export const getters = {
+  user(state) {
+    return state.user.data
   },
-  actions: {
-    // async nuxtServerInit({ commit }) {
-    //   await this.$fireAuth.onAuthStateChanged(function(user) {
-    //     if (user) {
-    //       commit('SET_USER', {
-    //         displayName: user.displayName,
-    //         email: user.email
-    //       })
-    //     } else {
-    //       commit('SET_USER', null)
-    //     }
-    //   })
-    // },
-    signUserIn({ commit }, { login, password }) {
-      this.$fireAuth
-        .signInWithEmailAndPassword(login, password)
-        .then((user) => {
-          commit('SET_LOGGED_IN', !!user)
-          if (user) {
-            commit('SET_USER', {
-              displayName: user.displayName,
-              email: user.email
-            })
-          } else {
-            commit('SET_USER', null)
-          }
-        })
-    }
+  loggedIn(state) {
+    return state.user.loggedIn
   }
 }
