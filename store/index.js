@@ -7,25 +7,40 @@ export const state = () => ({
 
 export const actions = {
   async signUserIn({ commit }, { login, password }) {
-    await this.$fireAuth
-      .signInWithEmailAndPassword(login, password)
-      .then((data) => {
-        if (data) {
-          commit('SET_LOGGED_IN', !!data)
-          commit('SET_USER', {
-            email: data.user.email
-          })
-        } else {
-          commit('SET_LOGGED_IN', false)
-          commit('SET_USER', null)
-        }
-      })
+    try {
+      await this.$fireAuth
+        .signInWithEmailAndPassword(login, password)
+        .then((data) => {
+          if (data) {
+            commit('SET_LOGGED_IN', !!data)
+            commit('SET_USER', {
+              email: data.user.email
+            })
+          } else {
+            commit('SET_LOGGED_IN', false)
+            commit('SET_USER', null)
+          }
+        })
+    } catch (e) {
+      alert(e)
+    }
   },
   async signUserOut({ commit }) {
     await this.$fireAuth.signOut().then(() => {
       commit('SET_USER', null)
       commit('SET_LOGGED_IN', false)
     })
+  },
+  async createUser({ dispatch }, { login, password }) {
+    try {
+      await this.$fireAuth
+        .createUserWithEmailAndPassword(login, password)
+        .then(() => {
+          dispatch('signUserIn', { login, password })
+        })
+    } catch (e) {
+      alert(e)
+    }
   }
 }
 export const mutations = {

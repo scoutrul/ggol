@@ -7,8 +7,10 @@
           v-text-field(v-model="login" :rules="rulesLogin" placeholder="login(email)" :loading="!loggedIn")
           v-text-field(v-model="password" :rules="rulesPassword" placeholder="password" :loading="!loggedIn")
           v-btn(@click.prevent="signUserIn") SignIn
+          v-btn(@click.prevent="createUser") createUser
       v-card(v-else)
         v-card-title.headline Velkomen!
+        v-card-title.headline {{user.email}}
         v-card-text
           v-btn(@click.prevent="signUserOut") SignOut
 </template>
@@ -52,6 +54,9 @@ export default {
   computed: {
     loggedIn() {
       return this.$store.getters.loggedIn
+    },
+    user() {
+      return this.$store.getters.user
     }
   },
   methods: {
@@ -63,6 +68,12 @@ export default {
     },
     async signUserOut() {
       await this.$store.dispatch('signUserOut')
+    },
+    async createUser() {
+      await this.$store.dispatch('createUser', {
+        login: this.login,
+        password: this.password
+      })
     }
   }
 }
