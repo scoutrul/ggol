@@ -6,13 +6,53 @@ export const state = () => ({
 })
 
 export const actions = {
-  async signUserIn({ commit }, { login, password }) {
+  async startSession(ctx, { uid }) {
+    await this.$fireDb.ref('.info/connected').on('value', async (snap) => {
+      if (snap.val() === true) {
+        await this.$fireStore
+          .collection('users')
+          .doc(uid)
+          .set(
+            {
+              online: true
+            },
+            { merge: true }
+          )
+        alert('connected')
+      } else {
+        await this.$fireStore
+          .collection('users')
+          .doc(uid)
+          .set(
+            {
+              online: false
+            },
+            { merge: true }
+          )
+        alert('not connected')
+      }
+    })
+  },
+  async setUserOnline(ctx, { uid }) {
+    await this.$fireStore
+      .collection('users')
+      .doc(uid)
+      .set(
+        {
+          online: true
+        },
+        { merge: true }
+      )
+  },
+  async signUserIn({ commit, dispatch }, { login, password }) {
     try {
+      await this.$fireAuth.signUserOut
       await this.$fireAuth
         .signInWithEmailAndPassword(login, password)
-        .then((data) => {
+        .then(async (data) => {
           if (data) {
-            commit('SET_LOGGED_IN', !!data)
+            await dispatch('setUserOnline', { uid: data.user.uid })
+            commit('SET_LOGGED_IN', true)
             commit('SET_USER', {
               email: data.user.email
             })
@@ -26,7 +66,7 @@ export const actions = {
     }
   },
   async authUserIn({ commit }, { email }) {
-    await commit('SET_LOGGED_IN', !!email)
+    await commit('SET_LOGGED_IN', true)
     await commit('SET_USER', { email })
   },
   async signUserOut({ commit }) {
@@ -39,8 +79,8 @@ export const actions = {
     try {
       await this.$fireAuth
         .createUserWithEmailAndPassword(login, password)
-        .then(() => {
-          dispatch('signUserIn', { login, password })
+        .then(async (data) => {
+          await dispatch('setUserOnline', { uid: data.user.uid })
         })
     } catch (e) {
       alert(e)

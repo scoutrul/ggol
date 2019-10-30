@@ -17,6 +17,7 @@ export default {
         console.log('user in')
         console.log(user)
         await this.$store.dispatch('authUserIn', user)
+        await this.$store.dispatch('startSession', { uid: user.uid })
       } else {
         console.log(user)
         console.log('user is out')

@@ -73,7 +73,7 @@ module.exports = {
           }
         },
         // The following options are optional:
-        useOnly: ['auth', 'realtimeDb'],
+        useOnly: ['auth', 'realtimeDb', 'firestore'],
         customEnv: false,
         functionsLocation: 'us-central1',
         remoteConfig: {
