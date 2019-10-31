@@ -26,7 +26,8 @@
     "fastify": "^1.13.3",
     "firebase": "^7.2.2",
     "nuxt": "^2.10.2",
-    "nuxt-fire": "^2.3.0"
+    "nuxt-fire": "^2.3.0",
+    "vue-tournament-bracket-generator": "github:diegomengarda/vue-tournament-bracket-generator"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",

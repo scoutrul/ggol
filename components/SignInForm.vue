@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-flex(xs12 sm8 md6)
+  v-flex(xs12 sm8 md6).ma-auto
     v-card(v-if="!loggedIn" :loading="!mounted")
       v-card-title.headline Login
       v-card-text
