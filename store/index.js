@@ -6,43 +6,25 @@ export const state = () => ({
 })
 
 export const actions = {
-  async startSession(ctx, { uid }) {
-    await this.$fireDb.ref('.info/connected').on('value', async (snap) => {
-      if (snap.val() === true) {
-        await this.$fireStore
-          .collection('users')
-          .doc(uid)
-          .set(
-            {
-              online: true
-            },
-            { merge: true }
-          )
-        alert('connected')
+  async authStateChange({ dispatch }) {
+    await this.$fireAuth.onAuthStateChanged(async (user) => {
+      if (user) {
+        console.log('user in')
+        console.log(user)
+        await dispatch('authUserIn', user)
+        dispatch('setUserOnline', { uid: user.uid })
       } else {
-        await this.$fireStore
-          .collection('users')
-          .doc(uid)
-          .set(
-            {
-              online: false
-            },
-            { merge: true }
-          )
-        alert('not connected')
+        console.log(user)
+        console.log('user is out')
       }
     })
   },
-  async setUserOnline(ctx, { uid }) {
-    await this.$fireStore
-      .collection('users')
-      .doc(uid)
-      .set(
-        {
-          online: true
-        },
-        { merge: true }
-      )
+  setUserOnline(ctx, { uid }) {
+    const ref = this.$fireDb.ref('usersOnline/' + uid)
+    ref.set({
+      online: true
+    })
+    ref.onDisconnect().remove()
   },
   async signUserIn({ commit, dispatch }, { login, password }) {
     try {
@@ -51,9 +33,9 @@ export const actions = {
         .signInWithEmailAndPassword(login, password)
         .then(async (data) => {
           if (data) {
-            await dispatch('setUserOnline', { uid: data.user.uid })
-            commit('SET_LOGGED_IN', true)
-            commit('SET_USER', {
+            dispatch('setUserOnline', { uid: data.user.uid })
+            await commit('SET_LOGGED_IN', true)
+            await commit('SET_USER', {
               email: data.user.email
             })
           } else {
@@ -70,6 +52,13 @@ export const actions = {
     await commit('SET_USER', { email })
   },
   async signUserOut({ commit }) {
+    try {
+      const user = await this.$fireAuth.currentUser
+      const ref = await this.$fireDb.ref('usersOnline/' + user.uid)
+      ref.remove()
+    } catch (e) {
+      alert(e)
+    }
     await this.$fireAuth.signOut().then(() => {
       commit('SET_USER', null)
       commit('SET_LOGGED_IN', false)
