@@ -6,7 +6,7 @@
         v-text-field(v-model="login" :rules="rulesLogin" placeholder="login(email)")
         v-text-field(v-model="password" :rules="rulesPassword" placeholder="password")
         v-text-field(v-model="nickname" placeholder="nickname" )
-        v-btn(@click.prevent="createUser") createUser
+        v-btn(@click.prevent="createUserAuth") createUserAuth
 </template>
 
 <script>
@@ -34,8 +34,8 @@ export default {
     this.mounted = true
   },
   methods: {
-    async createUser() {
-      await this.$store.dispatch('createUser', {
+    async createUserAuth() {
+      await this.$store.dispatch('createUserAuth', {
         login: this.login,
         password: this.password,
         nickname: this.nickname

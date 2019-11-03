@@ -9,23 +9,43 @@ export const actions = {
   async authStateChange({ dispatch }) {
     await this.$fireAuth.onAuthStateChanged(async (user) => {
       if (user) {
+        const uid = user.uid
         console.log('user in')
         console.log(user)
-        await dispatch('authUserIn', user)
-        dispatch('setUserOnline', { uid: user.uid })
+        await dispatch('authUserIn', { uid })
+        dispatch('setUserOnline', { uid })
       } else {
-        console.log(user)
         console.log('user is out')
       }
     })
   },
-  setUserOnline(ctx, { uid, name = 'Anonim' }) {
+  setUserOnline(ctx, { uid, nickname = 'Anonim', email = '' }) {
     const ref = this.$fireDb.ref('usersOnline/' + uid)
     ref.set({
       online: true,
-      name
+      nickname,
+      email
     })
     ref.onDisconnect().remove()
+  },
+  async getUserInfo({ commit }, { uid }) {
+    console.log(uid)
+    try {
+      const user = this.$fireStore.collection('users').doc(uid)
+      const userDoc = await user.get()
+      console.log(userDoc)
+      const userState = {
+        uid: userDoc.data().uid,
+        login: userDoc.data().login,
+        nickname: userDoc.data().nickname,
+        password: userDoc.data().password
+      }
+
+      await commit('SET_USER', userState)
+    } catch (e) {
+      alert(e)
+      console.log(e)
+    }
   },
   async signUserIn({ commit, dispatch }, { login, password }) {
     try {
@@ -34,11 +54,12 @@ export const actions = {
         .signInWithEmailAndPassword(login, password)
         .then(async (data) => {
           if (data) {
-            dispatch('setUserOnline', { uid: data.user.uid })
+            const uid = await data.user.uid
+
+            dispatch('setUserOnline', { uid })
+
             await commit('SET_LOGGED_IN', true)
-            await commit('SET_USER', {
-              email: data.user.email
-            })
+            await dispatch('getUserInfo', { uid })
           } else {
             commit('SET_LOGGED_IN', false)
             commit('SET_USER', null)
@@ -48,9 +69,9 @@ export const actions = {
       alert(e)
     }
   },
-  async authUserIn({ commit }, { email }) {
+  async authUserIn({ commit, dispatch }, { uid }) {
     await commit('SET_LOGGED_IN', true)
-    await commit('SET_USER', { email })
+    await dispatch('getUserInfo', { uid })
   },
   async signUserOut({ commit }) {
     try {
@@ -65,33 +86,32 @@ export const actions = {
       commit('SET_LOGGED_IN', false)
     })
   },
-  async saveUser({ commit }, { uid, login, password, nickname }) {
+  async saveUserState({ commit }, { uid, login, password, nickname }) {
     const users = this.$fireStore.collection('users')
+    const userState = {
+      uid,
+      login,
+      password,
+      nickname
+    }
     try {
-      await users
-        .add({
-          uid,
-          login,
-          password,
-          nickname
-        })
-        .then(async (ref) => {
-          console.log('Added document with ID: ', ref.id)
-          const messageDoc = await users.doc(ref.id).get()
-          alert(messageDoc.data().login)
-        })
+      await users.add(userState).then(async (ref) => {
+        console.log('Added document with ID: ', ref.id)
+        // await users.doc(ref.id).get().data().login
+        await commit('SET_USER', userState)
+      })
     } catch (e) {
       alert(e)
     }
   },
-  async createUser({ dispatch }, { login, password, nickname }) {
+  async createUserAuth({ dispatch }, { login, password, nickname }) {
     try {
       await this.$fireAuth
         .createUserWithEmailAndPassword(login, password)
         .then(async (data) => {
           const uid = data.user.uid
           await dispatch('setUserOnline', { uid })
-          await dispatch('saveUser', {
+          await dispatch('saveUserState', {
             uid,
             login,
             password,
@@ -103,6 +123,7 @@ export const actions = {
     }
   }
 }
+
 export const mutations = {
   SET_LOGGED_IN(state, value) {
     state.user.loggedIn = value
