@@ -1,12 +1,15 @@
 <template lang="pug">
   v-flex(xs12 sm8 md6).ma-auto
-    v-card(v-if="!loggedIn" :loading="!mounted")
-      v-card-title.headline Login
-      v-card-text
-        v-text-field(v-model="login" :rules="rulesLogin" placeholder="login(email)" :loading="!loggedIn")
-        v-text-field(v-model="password" :rules="rulesPassword" placeholder="password" :loading="!loggedIn")
-        v-btn(@click.prevent="signUserIn") SignIn
-        v-btn(@click.prevent="createUser") createUser
+    v-layout(v-if="!loggedIn")
+      v-flex
+        v-card( :loading="!mounted")
+          v-card-title.headline Login
+          v-card-text
+            v-text-field(v-model="login" :rules="rulesLogin" placeholder="login(email)" :loading="!loggedIn")
+            v-text-field(v-model="password" :rules="rulesPassword" placeholder="password" :loading="!loggedIn")
+            v-btn(@click.prevent="signUserIn") SignIn
+      v-flex(v-if="!loggedIn")
+        RegisterForm
     v-card(v-else)
       v-card-title.headline Velkomen!
       v-card-title.headline {{user && user.email}}
@@ -15,14 +18,14 @@
 </template>
 
 <script>
+import RegisterForm from '~/components/RegisterForm'
 export default {
-  components: {},
+  components: { RegisterForm },
   data() {
     return {
       mounted: false,
       login: 'test@test.tt',
       password: 'testest',
-      tourneys: [],
       rulesLogin: [
         (value) => !!value || 'Required.',
         (value) => {
@@ -54,12 +57,6 @@ export default {
     },
     async signUserOut() {
       await this.$store.dispatch('signUserOut')
-    },
-    async createUser() {
-      await this.$store.dispatch('createUser', {
-        login: this.login,
-        password: this.password
-      })
     }
   }
 }

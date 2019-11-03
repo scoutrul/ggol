@@ -2,7 +2,7 @@
   v-layout.tournament-brackets
     v-layout(column).flex.round(:key='index' :class='`round-${round}`' v-for='(round, index) in rounds')
       v-flex.match(:key='matchIndex' v-for='(match, matchIndex) in round')
-        .match__content {{ ++matchIndex}} of {{round}}
+        .match__content {{findPlayer({round, match: ++matchIndex})}}
 </template>
 
 <script>
@@ -18,6 +18,9 @@ export default {
   computed: {
     rounds() {
       return defaultRounds.filter((rounds) => rounds <= this.bracketSize)
+    },
+    findPlayer() {
+      return ({ round, match }) => `${round} of ${match}`
     }
   }
 }

@@ -19,10 +19,11 @@ export const actions = {
       }
     })
   },
-  setUserOnline(ctx, { uid }) {
+  setUserOnline(ctx, { uid, name = 'Anonim' }) {
     const ref = this.$fireDb.ref('usersOnline/' + uid)
     ref.set({
-      online: true
+      online: true,
+      name
     })
     ref.onDisconnect().remove()
   },
@@ -64,12 +65,38 @@ export const actions = {
       commit('SET_LOGGED_IN', false)
     })
   },
-  async createUser({ dispatch }, { login, password }) {
+  async saveUser({ commit }, { uid, login, password, nickname }) {
+    const users = this.$fireStore.collection('users')
+    try {
+      await users
+        .add({
+          uid,
+          login,
+          password,
+          nickname
+        })
+        .then(async (ref) => {
+          console.log('Added document with ID: ', ref.id)
+          const messageDoc = await users.doc(ref.id).get()
+          alert(messageDoc.data().login)
+        })
+    } catch (e) {
+      alert(e)
+    }
+  },
+  async createUser({ dispatch }, { login, password, nickname }) {
     try {
       await this.$fireAuth
         .createUserWithEmailAndPassword(login, password)
         .then(async (data) => {
-          await dispatch('setUserOnline', { uid: data.user.uid })
+          const uid = data.user.uid
+          await dispatch('setUserOnline', { uid })
+          await dispatch('saveUser', {
+            uid,
+            login,
+            password,
+            nickname
+          })
         })
     } catch (e) {
       alert(e)

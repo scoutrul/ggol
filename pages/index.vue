@@ -2,6 +2,7 @@
   v-layout(column justify-center align-center)
     v-flex(style="width: 100%")
       SignInForm
+      
     v-flex(style="width: 100%")
       Brackets(:bracket-size="16")
 </template>
