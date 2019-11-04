@@ -14,6 +14,9 @@ export default {
   components: { SignInForm, Brackets },
   data() {
     return {}
+  },
+  created() {
+    this.$store.dispatch('fetchUserList')
   }
 }
 </script>

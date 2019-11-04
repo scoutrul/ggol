@@ -79,7 +79,8 @@ module.exports = {
         remoteConfig: {
           settings: {
             fetchTimeoutMillis: 60000,
-            minimumFetchIntervalMillis: 43200000
+            minimumFetchIntervalMillis: 43200000,
+            timestampsInSnapshots: true
           },
           defaultConfig: {
             welcome_message: 'Welcome'

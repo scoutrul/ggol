@@ -8,21 +8,46 @@ export const state = () => ({
 export const actions = {
   async nuxtServerInit({ dispatch }) {
     await dispatch('authStateChange')
-    await dispatch('fetchUserList')
   },
 
   async fetchUserList({ commit }) {
-    await this.$fireStore
-      .collection('users')
-      .get()
-      .then(function(querySnapshot) {
-        const data = {}
-        querySnapshot.forEach(function(doc) {
-          data[doc.id] = doc.data()
-        })
-        commit('STORE_USER_LIST', data)
-      })
+    const collection = await this.$fireStore.collection('users').get()
+    const data = collection.docs.map((e) => e.data())
+    commit('STORE_USER_LIST', data)
   },
+  async getUserInfo({ commit }, { uid }) {
+    console.log(uid)
+    try {
+      const usersCollection = await this.$fireStore
+        .collection('users')
+        .doc(uid)
+        .get()
+      commit('SET_USER', usersCollection.data())
+    } catch (e) {
+      alert(e)
+      console.log(e)
+    }
+  },
+  async saveUserState({ commit }, { uid, login, password, nickname }) {
+    const users = this.$fireStore.collection('users')
+    const userState = {
+      uid,
+      login,
+      password,
+      nickname
+    }
+    try {
+      await users
+        .doc(uid)
+        .set(userState)
+        .then((ref) => {
+          commit('SET_USER', userState)
+        })
+    } catch (e) {
+      alert(e)
+    }
+  },
+
   async authStateChange({ dispatch }) {
     await this.$fireAuth.onAuthStateChanged(async (user) => {
       if (user && user.uid) {
@@ -44,25 +69,19 @@ export const actions = {
     })
     ref.onDisconnect().remove()
   },
-  async getUserInfo({ commit }, { uid }) {
-    console.log(uid)
-    try {
-      const usersCollection = this.$fireStore.collection('users')
 
-      await usersCollection
-        .where('uid', '==', uid)
-        .get()
-        .then((docs) => {
-          docs.forEach(async (doc) => {
-            doc.exists
-              ? await commit('SET_USER', doc.data())
-              : console.log('No find document! ' + uid)
-          })
-        })
+  async signUserOut({ commit }) {
+    try {
+      const user = await this.$fireAuth.currentUser
+      const ref = await this.$fireDb.ref('usersOnline/' + user.uid)
+      ref.remove()
     } catch (e) {
       alert(e)
-      console.log(e)
     }
+    await this.$fireAuth.signOut().then(() => {
+      commit('SET_USER', null)
+      commit('SET_LOGGED_IN', false)
+    })
   },
   async signUserIn({ commit, dispatch }, { login, password }) {
     try {
@@ -90,37 +109,7 @@ export const actions = {
     await commit('SET_LOGGED_IN', true)
     await dispatch('getUserInfo', { uid })
   },
-  async signUserOut({ commit }) {
-    try {
-      const user = await this.$fireAuth.currentUser
-      const ref = await this.$fireDb.ref('usersOnline/' + user.uid)
-      ref.remove()
-    } catch (e) {
-      alert(e)
-    }
-    await this.$fireAuth.signOut().then(() => {
-      commit('SET_USER', null)
-      commit('SET_LOGGED_IN', false)
-    })
-  },
-  async saveUserState({ commit }, { uid, login, password, nickname }) {
-    const users = this.$fireStore.collection('users')
-    const userState = {
-      uid,
-      login,
-      password,
-      nickname
-    }
-    try {
-      await users.add(userState).then(async (ref) => {
-        console.log('Added document with ID: ', ref.id)
-        // await users.doc(ref.id).get().data().login
-        await commit('SET_USER', userState)
-      })
-    } catch (e) {
-      alert(e)
-    }
-  },
+
   async createUserAuth({ dispatch }, { login, password, nickname }) {
     try {
       await this.$fireAuth
@@ -128,6 +117,7 @@ export const actions = {
         .then(async (data) => {
           const uid = data.user.uid
           await dispatch('setUserOnline', { uid })
+          await dispatch('getUserInfo', { uid })
           await dispatch('saveUserState', {
             uid,
             login,
