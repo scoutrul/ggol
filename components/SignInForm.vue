@@ -12,7 +12,7 @@
         RegisterForm
     v-card(v-else)
       v-card-title.headline Velkomen!
-      v-card-title.headline {{user && user.email}}
+      v-card-title.headline {{JSON.stringify(user)}}
       v-card-text
         v-btn(@click.prevent="signUserOut") SignOut
 </template>

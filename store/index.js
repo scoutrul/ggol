@@ -6,12 +6,28 @@ export const state = () => ({
 })
 
 export const actions = {
+  async nuxtServerInit({ dispatch }) {
+    await dispatch('authStateChange')
+    await dispatch('fetchUserList')
+  },
+
+  async fetchUserList({ commit }) {
+    await this.$fireStore
+      .collection('users')
+      .get()
+      .then(function(querySnapshot) {
+        const data = {}
+        querySnapshot.forEach(function(doc) {
+          data[doc.id] = doc.data()
+        })
+        commit('STORE_USER_LIST', data)
+      })
+  },
   async authStateChange({ dispatch }) {
     await this.$fireAuth.onAuthStateChanged(async (user) => {
-      if (user) {
+      if (user && user.uid) {
         const uid = user.uid
-        console.log('user in')
-        console.log(user)
+        console.log('user in', user)
         await dispatch('authUserIn', { uid })
         dispatch('setUserOnline', { uid })
       } else {
@@ -31,17 +47,18 @@ export const actions = {
   async getUserInfo({ commit }, { uid }) {
     console.log(uid)
     try {
-      const user = this.$fireStore.collection('users').doc(uid)
-      const userDoc = await user.get()
-      console.log(userDoc)
-      const userState = {
-        uid: userDoc.data().uid,
-        login: userDoc.data().login,
-        nickname: userDoc.data().nickname,
-        password: userDoc.data().password
-      }
+      const usersCollection = this.$fireStore.collection('users')
 
-      await commit('SET_USER', userState)
+      await usersCollection
+        .where('uid', '==', uid)
+        .get()
+        .then((docs) => {
+          docs.forEach(async (doc) => {
+            doc.exists
+              ? await commit('SET_USER', doc.data())
+              : console.log('No find document! ' + uid)
+          })
+        })
     } catch (e) {
       alert(e)
       console.log(e)
@@ -54,7 +71,7 @@ export const actions = {
         .signInWithEmailAndPassword(login, password)
         .then(async (data) => {
           if (data) {
-            const uid = await data.user.uid
+            const uid = data.user.uid
 
             dispatch('setUserOnline', { uid })
 
@@ -130,6 +147,9 @@ export const mutations = {
   },
   SET_USER(state, data) {
     state.user.data = data
+  },
+  STORE_USER_LIST(state, data) {
+    state.userList = data
   }
 }
 export const getters = {
